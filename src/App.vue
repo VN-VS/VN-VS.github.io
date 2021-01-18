@@ -4,8 +4,8 @@
   </div>
 </template>
 <script>
-import { ajax } from "@/util/ajax";
-import cookie from "js-cookie";
+// import { ajax } from "@/util/ajax";
+// import cookie from "js-cookie";
 
 export default {
   provide() {
@@ -31,16 +31,16 @@ export default {
   },
   methods: {
     getUserInfo() {
-      const token = cookie.get("token");
-      ajax({
-        urlKey: "/api/user/get",
-        methods: "POST",
-        data: {
-          token: token
-        }
-      }).then(res => {
-        this.userInfo = res.data;
-      });
+      // const token = cookie.get("token");
+      // ajax({
+      //   urlKey: "/api/user/get",
+      //   methods: "POST",
+      //   data: {
+      //     token: token
+      //   }
+      // }).then(res => {
+      //   this.userInfo = res.data;
+      // });
     }
   },
   mounted() {
