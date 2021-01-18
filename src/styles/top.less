@@ -1,0 +1,163 @@
+.layout-head {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  background-image: linear-gradient(143deg,
+      #2945cb 20%,
+      #2c83f9 81%,
+      #3a9dff 100%);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  min-width: 700px;
+
+  .top-left {
+    width: 256px;
+    float: left;
+  }
+
+  .top-right {
+    width: calc(100% - 256px);
+    float: right;
+  }
+
+  .layout-logo {
+    height: 72px;
+    // background:url(../assets/images/head-logo.png) no-repeat center center;
+    // background-size:170px auto;
+    // text-indent:-9999em;
+    //font-family: Roboto-Regular;
+    font-size: 20px;
+    color: #ffffff;
+    letter-spacing: 0.55px;
+    text-align: left;
+    padding: 20px 0 0 20px;
+
+    img {
+      height: 50%;
+      vertical-align: middle;
+    }
+
+    span {
+      font-family: HarmoniaSansPro-Bold;
+      font-weight: 600;
+      font-size: 20px;
+      padding-left: 20px;
+    }
+  }
+
+  .layout-nav {
+    float: right;
+    margin-right: 120px;
+
+    .ivu-menu-light {
+      height: auto;
+      background: transparent;
+    }
+
+    .ivu-menu {
+      .ivu-menu-item {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 0 2px;
+        margin: 8px 20px 0;
+        border-bottom: 4px solid transparent;
+        -webkit-font-smoothing: auto;
+        -webkit-transition: all linear 0.5s;
+
+        i {
+          font-size: 17px;
+
+          &.ivu-icon-ios-people {
+            font-size: 22px;
+            vertical-align: middle;
+            position: relative;
+            top: -2px;
+          }
+
+          &.icon-building {
+            font-size: 22px;
+            vertical-align: middle;
+            position: relative;
+            top: -2px;
+          }
+        }
+      }
+
+      .ivu-menu-item:hover,
+      .ivu-menu-item-active {
+        color: #fff;
+        border-bottom: 4px solid #fff;
+      }
+    }
+
+    &-search {
+      padding-top: 26px;
+    }
+  }
+
+  .drp.ivu-dropdown {
+    height: 72px;
+    line-height: 72px;
+
+    i {
+      cursor: pointer;
+      font-size: 26px;
+    }
+
+    .ivu-dropdown-item {
+
+      //padding: 7px 16px 7px 10px;
+      i {
+        color: #5697f1;
+        margin-right: 5px;
+        font-weight: bold;
+        position: relative;
+        top: -1px;
+        font-size: 12px;
+      }
+    }
+
+    .ivu-dropdown-menu {
+      line-height: initial;
+    }
+  }
+
+  .ivu-select-item {
+    text-align: left;
+    box-shadow: none;
+  }
+
+  .ivu-select-input {
+    background-color: #fff;
+    color: rgba(23, 35, 61, 0.75);
+    font-size: 14px;
+  }
+
+  .ivu-select-selection {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .layout-dropdown {
+    display: inline-block;
+    color: #fff;
+    padding-right: 12px;
+    padding-left: 21px;
+    height: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    right: 10px;
+
+    span {
+      cursor: pointer;
+    }
+  }
+}
+
+.layout-head-index {
+  background: #2149ab;
+  box-shadow: none;
+}
