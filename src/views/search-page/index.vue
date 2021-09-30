@@ -155,48 +155,47 @@ export default {
     },
     // 过滤数据
     filterData(index, arr) {
-      console.log(index, arr);
       let list = [];
       // 2 组件
-      // let clildren = this.menuData[index];
-      // if (clildren) {
-      //   this.getArrangementData(arr).forEach(item => {
-      //     let path = `/${clildren.path}/`;
-      //     let secondLevel = "";
-      //     let name = "";
-      //     let describe = "";
-      //     switch (clildren.name) {
-      //       case "样式库":
-      //         path = `/stylelib-detail/${item.enname}/stylelib/${item.id}`;
-      //         secondLevel = item.name;
-      //         name = item.title;
-      //         describe = item.desc;
-      //         break;
-      //       case "组件":
-      //         path =
-      //           path +
-      //           item.text +
-      //           "/" +
-      //           this.componentsTagType[item.tagTypeIndex].value;
-      //         secondLevel = this.componentsTagType[item.tagTypeIndex].label;
-      //         name = item.label + (item.text || "");
-      //         describe = item.content;
-      //         break;
-      //       default:
-      //         path = path + item.name;
-      //         secondLevel = "";
-      //         name = item.label + (item.text || "");
-      //         describe = item.content;
-      //     }
-      //     list.push({
-      //       parent: clildren.name, // "大标题"
-      //       children: secondLevel, // 二级菜单
-      //       name, // 左侧菜单标题
-      //       describe, // 模糊查询到的内容
-      //       path
-      //     });
-      //   });
-      // }
+      let clildren = this.menuData[index];
+      if (clildren) {
+        this.getArrangementData(arr).forEach(item => {
+          let path = `/${clildren.path}/`;
+          let secondLevel = "";
+          let name = "";
+          let describe = "";
+          switch (clildren.name) {
+            case "样式库":
+              path = `/stylelib-detail/${item.enname}/stylelib/${item.id}`;
+              secondLevel = item.name;
+              name = item.title;
+              describe = item.desc;
+              break;
+            case "组件":
+              path =
+                path +
+                item.text +
+                "/" +
+                this.componentsTagType[item.tagTypeIndex].value;
+              secondLevel = this.componentsTagType[item.tagTypeIndex].label;
+              name = item.label + (item.text || "");
+              describe = item.content;
+              break;
+            default:
+              path = path + item.name;
+              secondLevel = "";
+              name = item.label + (item.text || "");
+              describe = item.content;
+          }
+          list.push({
+            parent: clildren.name, // "大标题"
+            children: secondLevel, // 二级菜单
+            name, // 左侧菜单标题
+            describe, // 模糊查询到的内容
+            path
+          });
+        });
+      }
       return list;
     },
     /**
