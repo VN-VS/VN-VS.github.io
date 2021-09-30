@@ -295,9 +295,9 @@ export default {
     getLength(data, index) {
       if (index === 2) {
         let i = 0;
-        // data.forEach(k => {
-        //   i = i + k.length;
-        // });
+        data.forEach(k => {
+          i = i + k.length;
+        });
         return i;
       } else {
         return data.length;
