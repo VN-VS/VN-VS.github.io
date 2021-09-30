@@ -1,12 +1,11 @@
 // 生成随机字符串
 export default function(len = 32) {
-  console.log(len);
-  // const $chars =
-  //   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-  //const maxPos = $chars.length;
+  const $chars =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+  const maxPos = $chars.length;
   let str = "";
-  // for (let i = 0; i < len; i++) {
-  //   str += $chars.charAt(Math.floor(Math.random() * maxPos));
-  // }
+  for (let i = 0; i < len; i++) {
+    str += $chars.charAt(Math.floor(Math.random() * maxPos));
+  }
   return str;
 }
