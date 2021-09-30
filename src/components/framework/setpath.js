@@ -3,28 +3,25 @@
  */
 // import menu from "@/assets/config/menu.js";
 export default {
-  // findPath(data, path, first, box) {
-  //   for (let index = 0; index < data.length; index++) {
-  //     const el = data[index];
-  //     if (el.child.length) {
-  //       box.openNames.push(el.id);
-  //       this.findPath(el.child, path, first, box);
-  //     } else {
-  //       if (path === el.href) {
-  //         box.firstNav = first;
-  //         box.firstCurrent = first.id;
-  //         box.leftCurrent = el.id;
-  //         box.firstChild = first;
-  //         box.searchList = first;
-  //         box.childCurrent = el.id;
-  //         box.childObj = el;
-  //         // return box;
-  //       }
-  //     }
-  //   }
-  // },
-  findPath() {
-    
+  findPath(data, path, first, box) {
+    for (let index = 0; index < data.length; index++) {
+      const el = data[index];
+      if (el.child.length) {
+        box.openNames.push(el.id);
+        this.findPath(el.child, path, first, box);
+      } else {
+        if (path === el.href) {
+          box.firstNav = first;
+          box.firstCurrent = first.id;
+          box.leftCurrent = el.id;
+          box.firstChild = first;
+          box.searchList = first;
+          box.childCurrent = el.id;
+          box.childObj = el;
+          // return box;
+        }
+      }
+    }
   },
   setPath(path, menu, fname) {
     const data = menu;
