@@ -3,25 +3,28 @@
  */
 // import menu from "@/assets/config/menu.js";
 export default {
-  findPath(data, path, first, box) {
-    for (let index = 0; index < data.length; index++) {
-      const el = data[index];
-      if (el.child.length) {
-        box.openNames.push(el.id);
-        this.findPath(el.child, path, first, box);
-      } else {
-        if (path === el.href) {
-          box.firstNav = first;
-          box.firstCurrent = first.id;
-          box.leftCurrent = el.id;
-          box.firstChild = first;
-          box.searchList = first;
-          box.childCurrent = el.id;
-          box.childObj = el;
-          // return box;
-        }
-      }
-    }
+  // findPath(data, path, first, box) {
+  //   for (let index = 0; index < data.length; index++) {
+  //     const el = data[index];
+  //     if (el.child.length) {
+  //       box.openNames.push(el.id);
+  //       this.findPath(el.child, path, first, box);
+  //     } else {
+  //       if (path === el.href) {
+  //         box.firstNav = first;
+  //         box.firstCurrent = first.id;
+  //         box.leftCurrent = el.id;
+  //         box.firstChild = first;
+  //         box.searchList = first;
+  //         box.childCurrent = el.id;
+  //         box.childObj = el;
+  //         // return box;
+  //       }
+  //     }
+  //   }
+  // },
+  findPath() {
+    
   },
   setPath(path, menu, fname) {
     const data = menu;
@@ -38,7 +41,7 @@ export default {
     };
     // for (let i = 0; i < data.length; i++) {
     if (!fname || !Array.isArray(data)) return _menu;
-    const _data = data.filter(item => item.path == fname)[0];
+    let _data = data.filter(item => item.path == fname)[0];
     if (!_data) return _menu;
     _menu.firstCurrent = _data.id;
     if (!path) {

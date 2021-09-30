@@ -31,7 +31,8 @@
                  :loffset="-186"
                  class=".myCode-content">
         <my-code :code="code"
-                 @dom-loaded="anchorLink = $event"></my-code>
+                 @dom-loaded="anchorLink = $event"
+                 @on-run='add'></my-code>
       </container>
     </main>
     <container v-else
@@ -111,11 +112,16 @@ export default {
       this.tabName = data;
       this.$router.push(`/components/${this.$route.params.id}/${data}`);
     },
-    // add() {
-    //     this.$router.push(
-    //         `/components/${this.$router.currentRoute.params.id}/addAssembly`
-    //     );
-    // },
+    add(id) {
+        this.$router.push(
+            {
+              name:'runComponents',
+              params:{
+                id
+              }
+            }
+        );
+    },
     /**
      * 请求文档
      */

@@ -59,11 +59,11 @@ const baseAjax = (() => {
             `${url}/${options.data}`;
           options.data = "";
         } else {
-          let dataStr = Object.entries(options.data)
-            .map(it => it.join("="))
-            .join("&");
+          // let dataStr = Object.entries(options.data)
+          //   .map(it => it.join("="))
+          //   .join("&");
 
-          url += `?${dataStr}`;
+          // url += `?${dataStr}`;
         }
       } else if (options.file) {
         returnOptions["data"] = options.data;

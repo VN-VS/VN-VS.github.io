@@ -9,6 +9,7 @@
     >
       <Card>
         <div class="myCode-case">
+          
           <my-display
             :code="option.content"
             :componentId="option.id"
@@ -21,8 +22,13 @@
         <div class="myCode-desc">
           <p>{{ option.desc }}</p>
         </div>
+        <div class='myCode-body'>
+          <div class='myCode-body-run'>
+            <span @click='run(option.id)'><Icon type="md-play" />运行</span>
+          </div>
+          <my-transition :value="option.content"></my-transition>
+        </div>
 
-        <my-transition :value="option.content"></my-transition>
       </Card>
     </div>
   </main>
@@ -57,6 +63,9 @@ export default {
       this.$nextTick(() => {
         this.$emit("dom-loaded", true);
       });
+    },
+    run(id){
+      this.$emit('on-run',id)
     }
   },
   watch: {

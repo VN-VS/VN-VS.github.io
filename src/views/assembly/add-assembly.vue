@@ -1,59 +1,26 @@
 <style>
 .addAssembly {
   padding: 20px;
+  display: flex;
 }
 </style>
-
 <template>
   <main class="addAssembly">
-    <Form
-      ref="formCustom"
-      :model="formCustom"
-      :rules="ruleCustom"
-      :label-width="60"
-    >
-      <FormItem label="名称" prop="name">
-        <Input v-model="formCustom.name" placeholder="请输入..."></Input>
-      </FormItem>
-
-      <FormItem label="详情" prop="details">
         <Input
-          v-model="formCustom.details"
-          type="textarea"
-          :autosize="{ minRows: 5, maxRows: 20 }"
-          placeholder="请输入..."
-        ></Input>
-      </FormItem>
-
-      <FormItem label="代码" prop="html">
-        <Input
+        style='width:600px'
           v-model="formCustom.html"
           type="textarea"
-          :autosize="{ minRows: 15, maxRows: 20 }"
+          :autosize="{ minRows: 15, maxRows: 30 }"
           placeholder="请输入..."
         ></Input>
-      </FormItem>
-
-      <FormItem label="">
-        <Button type="primary" @click="run()">运行</Button>
-      </FormItem>
-
-      <FormItem label="运行事例">
-        <my-display :code="formCustom.html" ref="refDisplay"></my-display>
-      </FormItem>
-
-      <FormItem>
-        <Button type="primary" @click="handleSubmit('formCustom')">提交</Button>
-        <Button @click="handleReset('formCustom')" style="margin-left: 8px"
-          >重置</Button
-        >
-      </FormItem>
-    </Form>
+      <my-display :code="formCustom.html" ref="refDisplay" style='margin-left:16px'></my-display>
   </main>
 </template>
 <script>
 import myDisplay from "./display";
 // import defaultCode from "./default-code.js";
+import transferCode from "@/assets/data/component/transfer/code.js";
+
 export default {
   components: { myDisplay },
   data() {
@@ -61,7 +28,7 @@ export default {
       formCustom: {
         name: "",
         details: "",
-        html: ""
+        html: transferCode[0].content
       },
       ruleCustom: {
         name: [
@@ -87,6 +54,10 @@ export default {
         ]
       }
     };
+  },
+  created(){
+    console.log(this.$route.params.id)
+    transferCode.find(item=>item.id===transferCode)
   },
   methods: {
     handleSubmit(name) {

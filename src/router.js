@@ -39,8 +39,8 @@ export default new Router({
         //   meta: { uncommon: true }
         // },
         {
-          path: "addAssembly",
-          name: "/components",
+          path: "addAssembly/:id",
+          name: "runComponents",
           components: require("@/views/assembly/add-assembly.vue")
         },
         {
