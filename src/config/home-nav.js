@@ -1,7 +1,8 @@
 /**
  * 首页模块配置
  */
-const HOMENAV = [{
+const HOMENAV = [
+  {
     name: "c1",
     child: [{
         title: "品牌",
@@ -14,7 +15,7 @@ const HOMENAV = [{
         title: "设计",
         type: "D",
         content: "产品设计基础规范引导，包含概述、设计基础（色彩、字体、图标、布局等）、设计模式。",
-        pic: require("../assets/img/design.svg"),
+        //pic: require("../assets/img/design.svg"),
         bg: "#F27036",
         link: "/design/design-overview"
       },
@@ -52,7 +53,7 @@ const HOMENAV = [{
         title: "样式库",
         type: "S",
         content: "丰富的设计样式库，不但可以快速使用而且为设计提供更多灵感。",
-        pic: require("../assets/img/style.svg"),
+       // pic: require("../assets/img/style.svg"),
         bg: "#2185F0",
         link: "/stylelib",
         extra: {
@@ -79,7 +80,7 @@ const HOMENAV = [{
         title: "插图",
         type: "D",
         content: "插图在市场营销和产品设计中发挥很重要的作用，用于描述一个用户场景/故事，统一的插图设计能带给用户一个连贯清晰的的场景/故事体验。",
-        pic: require("../assets/img/picture.svg"),
+        //pic: require("../assets/img/picture.svg"),
         bg: "#fff",
         link: "/brand/brand-outline"
       }

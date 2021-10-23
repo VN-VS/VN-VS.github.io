@@ -16,14 +16,14 @@
                          @dom-loaded="anchorLink = $event"></editor-markdown>
       </container>
       <!-- 用法 -->
-      <container v-if="tabName === 'usage' && usage"
+      <!-- <container v-if="tabName === 'usage' && usage"
                  :anchorLink="anchorLink"
                  class=".tdDessign-example-header">
         <editor-markdown :data="usage"
                          :editor="editor"
                          @on-emit-data="usage = $event"
                          @dom-loaded="anchorLink = $event"></editor-markdown>
-      </container>
+      </container> -->
       <!-- 代码 -->
       <container v-if="tabName === 'code'"
                  :anchorLink="anchorLink"
@@ -60,7 +60,7 @@ export default {
   data() {
     return {
       editor: false,
-      tabName: "file",
+      tabName: "code",
       document: "",
       usage: "暂无",
       code: [],
@@ -70,7 +70,6 @@ export default {
       componentInfo: {}
     };
   },
-  computed: {},
   methods: {
     getArticle() {
       this.isDoc = true;
@@ -126,21 +125,22 @@ export default {
      * 请求文档
      */
     getDocument() {
-      ajax({
-        urlKey: "/api/document/get",
-        methods: "POST",
-        data: {
-          id: this.componentInfo.id
-        }
-      }).then(res => {
-        if (res.status === 1) {
-          if (res.data.length) {
-            this.document = res.data[0].content;
-          }
-        } else {
-          this.$Message.error(res.message);
-        }
-      });
+      this.document='暂无数据'
+      // ajax({
+      //   urlKey: "/api/document/get",
+      //   methods: "POST",
+      //   data: {
+      //     id: this.componentInfo.id
+      //   }
+      // }).then(res => {
+      //   if (res.status === 1) {
+      //     if (res.data.length) {
+      //       this.document = res.data[0].content;
+      //     }
+      //   } else {
+      //     this.$Message.error(res.message);
+      //   }
+      // });
     },
     /**
      * 请求用法
@@ -194,7 +194,7 @@ export default {
       this.anchorLink = true;
 
       this.getDocument();
-      this.getUsage();
+      // this.getUsage();
       this.getCode();
     },
     /**

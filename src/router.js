@@ -27,7 +27,8 @@ export default new Router({
         {
           path: "/chart/:id",
           name: "chart",
-          components: require("@/views/brand/brand.vue"),
+          // components: require("@/views/brand/brand.vue"),
+          components: require("@/views/currency/expect/index.vue"),
           meta: {
             uncommon: true
           }
@@ -46,7 +47,8 @@ export default new Router({
         {
           path: "/design/:id",
           name: "design",
-          components: require("@/views/brand/brand.vue"),
+          // components: require("@/views/brand/brand.vue"),
+          components: require("@/views/currency/expect/index.vue"),
           meta: {
             uncommon: true
           }
@@ -55,7 +57,8 @@ export default new Router({
         {
           path: "/brand/:id",
           name: "brand",
-          components: require("@/views/brand/brand.vue"),
+          // components: require("@/views/brand/brand.vue"),
+          components: require("@/views/currency/expect/index.vue"),
           meta: {
             uncommon: true
           }
@@ -63,14 +66,13 @@ export default new Router({
         {
           path: "/stylelib",
           name: "stylelib",
-          components: require("@/views/stylelib/stylelib.vue"),
-
+          // components: require("@/views/stylelib/stylelib.vue"),
+          components: require("@/views/currency/expect/index.vue"),
         },
         {
           path: "/stylelib/:radiuType",
           name: "stylelib",
           components: require("@/views/stylelib/stylelib.vue"),
-
         },
         {
           path: "/common",
@@ -79,7 +81,6 @@ export default new Router({
           props: {
             default: true
           },
-
           children: [{
               path: "/stylelib-detail/:radiuType/:dtype/:id",
               name: "stylelib-detail",
@@ -168,6 +169,6 @@ export default new Router({
       path: "/examples/:id",
       nane: "examples",
       components: require("@/views/assembly/examples.vue")
-    }
+    },
   ]
 });

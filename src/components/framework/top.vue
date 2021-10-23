@@ -18,7 +18,7 @@
         <nav class="fr">
           <Menu mode="horizontal" :active-name="activeName" ref="topmenu">
             <template v-for="(val, index) in data">
-              <MenuItem :name="val.id" :key="index" :to="isChild(val.id - 1)">
+              <MenuItem :name="val.id" :key="index" :to="isChild(index)">
                 <!-- <Icon
                 :class="val.iviewIcon === false ? 'icon-' + val.icon : ''"
                 :type="val.icon"
@@ -34,7 +34,7 @@
         </div>-->
       </div>
       <!-- 内部操作 -->
-      <div class="layout-dropdown">
+      <!-- <div class="layout-dropdown">
         <Dropdown class="drp" trigger="click" placement="bottom-end" @on-click="operation">
           <Icon custom="i-td i-td-account_circle_px" />
           <DropdownMenu slot="list">
@@ -126,7 +126,7 @@
             </Dropdown>
           </DropdownMenu>
         </Dropdown>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -136,7 +136,6 @@ import filterPath from "./setpath";
 import overallSearch from "./overall-search.vue";
 import { ajax } from "@/util/ajax";
 import { mapActions } from "vuex";
-
 export default {
   components: {
     overallSearch
@@ -177,15 +176,16 @@ export default {
       // });
     }
   },
-  created() {},
   mounted() {
     // // let list = ["components"];
     // let name = this.$router.currentRoute.name;
-    this.getTabularData().then(() => {
-      // this.$bus.$emit("top-getData-end", this.data);
-      this.setMenuData(this.data);
+    // this.getTabularData().then(() => {
+    //   // this.$bus.$emit("top-getData-end", this.data);
+    //   this.setMenuData(this.data);
+    //   this.init();
+    // });
+    this.setMenuData(this.data);
       this.init();
-    });
   },
   methods: {
     ...mapActions(["setMenuData"]),
@@ -249,7 +249,6 @@ export default {
         this.$refs.topmenu.updateActiveName();
       });
     },
-
     isChild(index) {
       let path = "";
       const data = this.data[index].child;
@@ -263,7 +262,6 @@ export default {
       } else {
         path = "";
       }
-
       if (!path) return "/" + this.data[index].path;
       return "/" + this.data[index].path + "/" + path;
     },
@@ -273,7 +271,6 @@ export default {
     //   this.$router.push(path);
     //   // this.$bus.$emit("menu-change", key);
     // },
-
     logOff() {
       this.$router.push("/login");
     },

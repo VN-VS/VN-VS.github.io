@@ -12,7 +12,7 @@
       >
         <TabPane :index="2" label="代码" name="code"></TabPane>
         <TabPane :index="0" label="文档" name="file"></TabPane>
-        <TabPane :index="1" v-if="usage" label="用法" name="usage"></TabPane>
+        <!-- <TabPane :index="1" v-if="usage" label="用法" name="usage"></TabPane> -->
       </Tabs>
     </section>
   </main>
@@ -31,8 +31,9 @@ export default {
     },
   },
   methods: {
+    // 复制id
     handleCopyComponentID() {
-      this.$emit("handleCopyComponentID", true);
+      // this.$emit("handleCopyComponentID", true);
     },
     onTagsChange(data) {
       this.$emit("onTagsChange", data);
