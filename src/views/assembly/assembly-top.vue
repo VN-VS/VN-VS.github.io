@@ -10,11 +10,9 @@
         @on-click="onTagsChange"
         class="assembly-tabs"
       >
-        <TabPane :index="0" label="文档" name="file"></TabPane>
-
-        <TabPane :index="1" v-if="usage" label="用法" name="usage"></TabPane>
-
         <TabPane :index="2" label="代码" name="code"></TabPane>
+        <TabPane :index="0" label="文档" name="file"></TabPane>
+        <TabPane :index="1" v-if="usage" label="用法" name="usage"></TabPane>
       </Tabs>
     </section>
   </main>
@@ -23,14 +21,14 @@
 export default {
   props: {
     value: {
-      type: String
+      type: String,
     },
     componentInfo: {
-      type: Object
+      type: Object,
     },
     usage: {
-      type: String
-    }
+      type: String,
+    },
   },
   methods: {
     handleCopyComponentID() {
@@ -38,7 +36,7 @@ export default {
     },
     onTagsChange(data) {
       this.$emit("onTagsChange", data);
-    }
-  }
+    },
+  },
 };
 </script>

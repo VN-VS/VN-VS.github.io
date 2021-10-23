@@ -6,19 +6,20 @@ export default {
       name: "组件",
       path: "components",
       search: true,
-      child: [{
-          id: "3-1",
-          name: "使用说明",
-          englishName: "Use",
-          href: "components-use",
-          child: []
-        },
+      child: [
+        // {
+        //   id: "3-1",
+        //   name: "使用说明",
+        //   englishName: "Use",
+        //   href: "components-use",
+        //   child: []
+        // },
         {
           id: "3-2",
           name: "组件",
           child: [{
             id: "3-2-1",
-            name: "穿梭框",
+            name: "多级穿梭框",
             englishName: "Transfer",
             href: "components-transfer",
             child: []

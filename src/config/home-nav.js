@@ -73,7 +73,7 @@ const HOMENAV = [{
         content: "使用标准样式和代码快速创建产品。",
         pic: require("../assets/img/components.svg"),
         bg: "#00D2B3",
-        link: "/components/components-use"
+        link: "/components/components-transfer/code"
       },
       {
         title: "插图",

@@ -28,7 +28,7 @@ export default {
         [
           {
             name: "刘鹏飞",
-            info: "pengfei.liu ( 前端工程师 )",
+            info: "pengfei.liu@reyu.com ( 前端工程师 )",
             photo: require("../../assets/img/lpf.png")
           }
         ]
