@@ -20,7 +20,7 @@
         </header>
 
         <div class="myCode-desc">
-          <p>{{ option.desc }}</p>
+          <p v-html='option.desc'></p>
         </div>
         <div class='myCode-body'>
           <div class='myCode-body-run'>
