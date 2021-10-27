@@ -5,7 +5,6 @@ export default {
         <main>
           <ry-transfer
             :data="data"
-            filterable
             @on-keys-change="selectedKeys=$event"
             @on-data-change="selectedData=$event"
           ></ry-transfer>
@@ -19,93 +18,66 @@ export default {
             selectedData: [],
             data: [
               {
-                title: "我是a",
+                title: "title 1",
                 data: [
                   {
                     key: "1",
-                    label: "a" + 1,
-                    description: "a的描述a的描述a的描述a的描述  " + 1,
-                    disabled: false
+                    label: "北京 1",
                   },
                   {
                     key: "2",
-                    label: "a" + 2,
-                    description: "a的描述  " + 2,
-                    disabled: true
+                    label: "北京 2",
                   },
                   {
                     key: "3",
-                    label: "a" + 3,
-                    description: "a的描述  " + 3,
-                    disabled: false
+                    label: "北京 3",
                   },
                   {
                     key: "4",
-                    label: "a" + 4,
-                    description: "a的描述  " + 4,
-                    disabled: true
+                    label: "北京 4",
                   },
                   {
                     key: "5",
-                    label: "a" + 5,
-                    description: "a的描述  " + 5,
-                    disabled: false
+                    label: "北京 5"
                   },
                   {
                     key: "6",
-                    label: "a" + 6,
-                    description: "a的描述  " + 6,
-                    disabled: false
+                    label: "北京 6"
                   }
                 ]
               },
               {
-                title: "我是b",
+                title: "title 2",
                 data: [
                   {
                     key: "7",
-                    label: "b" + 7,
-                    description: "b的描述  " + 7,
-                    disabled: false,
-                    noMove: "left"
+                    label: "上海 1",
+                    disabled:true
                   },
                   {
                     key: "8",
-                    label: "b" + 8,
-                    description: "b的描述  " + 8,
-                    disabled: false,
-                    noMove: "right"
+                    label: "上海 2"
                   },
                   {
-                    key: "100",
-                    label: "b" + 100,
-                    description: "b的描述  " + 100,
-                    disabled: false,
-                    noMove: ""
+                    key: "9",
+                    label: "上海 3"
                   },
                   {
-                    key: "200",
-                    label: "b" + 200,
-                    description: "b的描述  " + 200,
-                    disabled: false
+                    key: "10",
+                    label: "上海 4"
                   }
                 ]
               },
               {
-                title: "我是c",
+                title: "title 3",
                 data: [
                   {
                     key: "9",
-                    label: "c" + 9,
-                    description: "c的描述  " + 9,
-                    disabled: false,
-                    noMove: "left"
+                    label: "深圳 1"
                   },
                   {
                     key: "10",
-                    label: "c" + 10,
-                    description: "c的描述  " + 10,
-                    disabled: false
+                    label: "深圳 2"
                   }
                 ]
               }
@@ -115,5 +87,5 @@ export default {
       };
       </script>
       `,
-    desc: '根据data长度渲染穿梭框数量，长度不限',
+    desc: '根据 <code> data </code> 长度渲染穿梭框数量，长度不限。',
   }

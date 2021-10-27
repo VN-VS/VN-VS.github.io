@@ -1,6 +1,12 @@
 import transferBase from './transfer-base.js'
-import transferDisabled from './transfer-disabled.js'
+import transferSearch from './transfer-search.js'
+import transferRenderFormat from './transfer-render-format.js'
+import transferMultistage from './transfer-multistage'
+import transferNoMovement from './transfer-no-movement.js'
 export default [
   transferBase,
-  transferDisabled,
+  transferSearch,
+  transferRenderFormat,
+  transferMultistage,
+  transferNoMovement,
 ]
