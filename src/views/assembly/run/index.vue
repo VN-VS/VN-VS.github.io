@@ -56,8 +56,6 @@ export default {
   created() {
     let { id: componentId, exampleId } = this.$route.params;
     this.formCustom.html = getRunTemplate(componentId, exampleId);
-    // console.log(this.$route)
-    // transferCode.find(item=>item.id===transferCode)
   },
   methods: {
     handleSubmit(name) {

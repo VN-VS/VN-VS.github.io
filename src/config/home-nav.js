@@ -3,6 +3,30 @@
  */
 const HOMENAV = [
   {
+    name: "c3",
+    child: [
+      {
+        title: "组件",
+        type: "C",
+        extra: {
+          isComponent: true
+        },
+        content: "使用标准样式和代码快速创建产品。",
+        pic: require("../assets/img/components.svg"),
+        bg: "#00D2B3",
+        link: "/components/components-transfer"
+      },
+      {
+        title: "插图",
+        type: "D",
+        content: "插图在市场营销和产品设计中发挥很重要的作用，用于描述一个用户场景/故事，统一的插图设计能带给用户一个连贯清晰的的场景/故事体验。",
+        //pic: require("../assets/img/picture.svg"),
+        bg: "#fff",
+        link: "/brand/brand-outline"
+      }
+    ]
+  },
+  {
     name: "c1",
     child: [{
       title: "品牌",
@@ -59,30 +83,6 @@ const HOMENAV = [
         extra: {
           // disabled: true
         }
-      }
-    ]
-  },
-  {
-    name: "c3",
-    child: [
-      {
-        title: "组件",
-        type: "C",
-        extra: {
-          isComponent: true
-        },
-        content: "使用标准样式和代码快速创建产品。",
-        pic: require("../assets/img/components.svg"),
-        bg: "#00D2B3",
-        link: "/components/components-transfer"
-      },
-      {
-        title: "插图",
-        type: "D",
-        content: "插图在市场营销和产品设计中发挥很重要的作用，用于描述一个用户场景/故事，统一的插图设计能带给用户一个连贯清晰的的场景/故事体验。",
-        //pic: require("../assets/img/picture.svg"),
-        bg: "#fff",
-        link: "/brand/brand-outline"
       }
     ]
   }

@@ -27,7 +27,7 @@ import container from "./container";
 import codeExample from "./code/index.vue";
 import codeSummary from "./summary/index.vue";
 import codeApi from "./code-api";
-import transferCode from "@/assets/data/component/transfer/index.js";
+import { getComponentInfo } from "./data";
 export default {
   inject: ["app"],
   components: { codeSummary, container, codeExample, codeApi },
@@ -39,16 +39,11 @@ export default {
   },
   methods: {
     /**
-     * 请求代码
-     */
-    getCode() {
-      this.code = transferCode;
-    },
-    /**
      * 获取数据
      */
     updateData() {
-      this.code = transferCode;
+      let { id: componentId } = this.$route.params;
+      this.code = getComponentInfo(componentId);
     },
   },
   created() {
@@ -59,12 +54,6 @@ export default {
      * 监听params.id
      */
     "$route.params.id": {
-      handler() {
-        this.updateData();
-      },
-      // deep: true 这里不能设置deep为true
-    },
-    "$route.params.exampleId": {
       handler() {
         this.updateData();
       },
