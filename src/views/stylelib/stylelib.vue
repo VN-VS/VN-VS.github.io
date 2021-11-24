@@ -9,16 +9,24 @@
     </div>
     <!-- 分类 -->
     <div class="cate">
-      <RadioGroup v-model="selCate" @on-change="filterCate" type="button">
-        <Radio v-for="(i, j) in cateList" :key="j" :label="i.name"></Radio>
+      <RadioGroup v-model="selCate"
+                  @on-change="filterCate"
+                  type="button">
+        <Radio v-for="(i, j) in cateList"
+               :key="j"
+               :label="i.name"></Radio>
       </RadioGroup>
     </div>
     <div class="cate-con">
       <div class="cate-head clearfix">
         <div class="cate-title">{{ selCate }} ({{ tplList.length }})</div>
         <div class="cate-desc">
-          <RadioGroup v-model="selSort" @on-change="filterCate" type="button">
-            <Radio v-for="(i, j) in sorts" :key="j" :label="i.name"></Radio>
+          <RadioGroup v-model="selSort"
+                      @on-change="filterCate"
+                      type="button">
+            <Radio v-for="(i, j) in sorts"
+                   :key="j"
+                   :label="i.name"></Radio>
           </RadioGroup>
           <!-- <Dropdown @on-click="descCate">
             <a href="javascript:void(0)">
@@ -38,10 +46,13 @@
       <!-- 模版内容 -->
       <div class="tpl-box clearfix">
         <ul>
-          <li v-for="(i, j) in tplList" :key="j">
+          <li v-for="(i, j) in tplList"
+              :key="j">
             <a>
-              <section class="tpl-box-content" @click="goDetail(i.id)">
-                <img :src="'http://design.talkingdata.com/' + i.cover" alt />
+              <section class="tpl-box-content"
+                       @click="goDetail(i.id)">
+                <img :src="'http://design.talkingdata.com/' + i.cover"
+                     alt />
               </section>
               <!-- <a :to="'stylelib-detail/stylelib/'+i.id" class="info clearfix"> -->
               <div class="info clearfix">
@@ -49,20 +60,17 @@
 
                 <span class="data fr">
                   <!-- 浏览量 -->
-                  <Icon size="16" custom="i-td i-td-visibility_px"></Icon>
+                  <Icon size="16"
+                        custom="i-td i-td-visibility_px"></Icon>
                   <em>{{ i.hot }}</em>
                 </span>
-                <span
-                  class="data fabulousIcon fr"
-                  style="padding-right: 25px"
-                  :class="{'fabulousIcon-praised':i.praised}"
-                >
-                  <Icon
-                    size="16"
-                    custom="i-td i-td-social_thumb_up_alt"
-                    style="cursor:pointer"
-                    @click.stop="onFabulous(i.id)"
-                  ></Icon>
+                <span class="data fabulousIcon fr"
+                      style="padding-right: 25px"
+                      :class="{'fabulousIcon-praised':i.praised}">
+                  <Icon size="16"
+                        custom="i-td i-td-social_thumb_up_alt"
+                        style="cursor:pointer"
+                        @click.stop="onFabulous(i.id)"></Icon>
                   <!-- 点赞 -->
                   <em>{{ i.likes }}</em>
                 </span>
@@ -77,7 +85,7 @@
 
 <script>
 import { ajax } from "@/util/ajax";
-import Util from "@/util/util";
+import { getCookie } from "@/util/util";
 export default {
   data() {
     return {
@@ -86,10 +94,10 @@ export default {
       sorts: [
         { name: "浏览最多", id: 0, key: "hot" },
         { name: "点赞最多", id: 2, key: "likes" },
-        { name: "更新时间", id: 1, key: "created_at" }
+        { name: "更新时间", id: 1, key: "created_at" },
       ],
       cateList: [{ name: "全部", id: 0, enname: "all" }],
-      tplList: []
+      tplList: [],
     };
   },
   created() {
@@ -108,7 +116,7 @@ export default {
       let res = await ajax({
         urlKey: "/api/template/tag/list",
         methods: "POST",
-        data: {}
+        data: {},
       });
       if (res && res.status == 1) {
         this.cateList = this.cateList.concat(res.data);
@@ -121,11 +129,11 @@ export default {
     async getTpl() {
       let fd = {};
       fd.tag_id = this.getDataType("name", this.selCate, "id");
-      fd.order = this.sorts.filter(item => item.name === this.selSort)[0].key;
+      fd.order = this.sorts.filter((item) => item.name === this.selSort)[0].key;
       let res = await ajax({
         urlKey: "/api/template/item/list",
         methods: "POST",
-        data: fd
+        data: fd,
       });
       if (res && res.status == 1) {
         this.tplList = res.data;
@@ -156,16 +164,16 @@ export default {
       this.$router.push(rou);
     },
     getDataType(name, value, type) {
-      return this.cateList.filter(item => item[name] === value)[0][type];
+      return this.cateList.filter((item) => item[name] === value)[0][type];
     },
     async onFabulous(id) {
       let res = await ajax({
         urlKey: "/api/template/item/likes",
         methods: "POST",
         data: {
-          template_id: id
+          template_id: id,
         },
-        sendHeader: true
+        sendHeader: true,
       });
       if (res && res.status == 1) {
         this.getTpl();
@@ -178,19 +186,19 @@ export default {
      */
     onGiveTheThumbsUp() {
       if (!this.tplList.length) return false;
-      let list = Util.getCookie("stylelibIds").split(",");
+      let list = getCookie("stylelibIds").split(",");
       if (!list.length) return false;
-      this.tplList.forEach(option => {
+      this.tplList.forEach((option) => {
         // 点赞
         option["praised"] = false;
-        list.forEach(item => {
+        list.forEach((item) => {
           if (option.id === item) {
             option.praised = true;
           }
         });
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -5,27 +5,27 @@ const HOMENAV = [
   {
     name: "c1",
     child: [{
-        title: "品牌",
-        type: "B",
-        content: "品牌基础规范，包含LOGO、标准字体、印刷、PPT模板等指引品牌风格的文档。",
-        pic: "",
-        link: "/brand/brand-overview"
-      },
-      {
-        title: "设计",
-        type: "D",
-        content: "产品设计基础规范引导，包含概述、设计基础（色彩、字体、图标、布局等）、设计模式。",
-        //pic: require("../assets/img/design.svg"),
-        bg: "#F27036",
-        link: "/design/design-overview"
-      },
-      {
-        title: "图表",
-        type: "C",
-        content: "清晰统一的数据可视化设计方案。",
-        pic: "",
-        link: "/chart/chart-color"
-      }
+      title: "品牌",
+      type: "B",
+      content: "品牌基础规范，包含LOGO、标准字体、印刷、PPT模板等指引品牌风格的文档。",
+      pic: "",
+      link: "/brand/brand-overview"
+    },
+    {
+      title: "设计",
+      type: "D",
+      content: "产品设计基础规范引导，包含概述、设计基础（色彩、字体、图标、布局等）、设计模式。",
+      //pic: require("../assets/img/design.svg"),
+      bg: "#F27036",
+      link: "/design/design-overview"
+    },
+    {
+      title: "图表",
+      type: "C",
+      content: "清晰统一的数据可视化设计方案。",
+      pic: "",
+      link: "/chart/chart-color"
+    }
     ]
   },
   {
@@ -53,7 +53,7 @@ const HOMENAV = [
         title: "样式库",
         type: "S",
         content: "丰富的设计样式库，不但可以快速使用而且为设计提供更多灵感。",
-       // pic: require("../assets/img/style.svg"),
+        // pic: require("../assets/img/style.svg"),
         bg: "#2185F0",
         link: "/stylelib",
         extra: {
@@ -74,7 +74,7 @@ const HOMENAV = [
         content: "使用标准样式和代码快速创建产品。",
         pic: require("../assets/img/components.svg"),
         bg: "#00D2B3",
-        link: "/components/components-transfer/code"
+        link: "/components/components-transfer"
       },
       {
         title: "插图",

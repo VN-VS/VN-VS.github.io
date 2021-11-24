@@ -1,10 +1,11 @@
 export default {
-    id: 'basic-transfer',
+    id: 'multistage',
     title: '多级',
     content: `<template>
         <main>
           <ry-transfer
             :data="data"
+            filterable
             @on-keys-change="selectedKeys=$event"
             @on-data-change="selectedData=$event"
           ></ry-transfer>

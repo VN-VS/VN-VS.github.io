@@ -1,26 +1,24 @@
 <style>
-.addAssembly {
+.run {
   padding: 20px;
   display: flex;
 }
 </style>
 <template>
-  <main class="addAssembly">
-        <Input
-        style='width:600px'
-          v-model="formCustom.html"
-          type="textarea"
-          :autosize="{ minRows: 15, maxRows: 30 }"
-          placeholder="请输入..."
-        ></Input>
-      <my-display :code="formCustom.html" ref="refDisplay" style='margin-left:16px'></my-display>
+  <main class="run">
+    <Input style='width:600px'
+           v-model="formCustom.html"
+           type="textarea"
+           :autosize="{ minRows: 15, maxRows: 30 }"
+           placeholder="请输入..."></Input>
+    <my-display :code="formCustom.html"
+                ref="refDisplay"
+                style='margin-left:16px'></my-display>
   </main>
 </template>
 <script>
-import myDisplay from "./display";
-// import defaultCode from "./default-code.js";
-import transferCode from "@/assets/data/component/transfer/code.js";
-
+import myDisplay from "../display";
+import { getRunTemplate } from "../data";
 export default {
   components: { myDisplay },
   data() {
@@ -28,40 +26,42 @@ export default {
       formCustom: {
         name: "",
         details: "",
-        html: transferCode[0].content
+        html: "",
       },
       ruleCustom: {
         name: [
           {
             required: true,
             message: "请填写名称",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         details: [
           {
             required: true,
             message: "请填写详情",
-            trigger: "blur"
-          }
+            trigger: "blur",
+          },
         ],
         html: [
           {
             required: true,
             message: "请填写代码",
-            trigger: "blur"
-          }
-        ]
-      }
+            trigger: "blur",
+          },
+        ],
+      },
     };
   },
-  created(){
-    console.log(this.$route.params.id)
-    transferCode.find(item=>item.id===transferCode)
+  created() {
+    let { id: componentId, exampleId } = this.$route.params;
+    this.formCustom.html = getRunTemplate(componentId, exampleId);
+    // console.log(this.$route)
+    // transferCode.find(item=>item.id===transferCode)
   },
   methods: {
     handleSubmit(name) {
-      this.$refs[name].validate(valid => {
+      this.$refs[name].validate((valid) => {
         if (valid) {
           this.$Message.success("Success!");
         } else {
@@ -75,7 +75,7 @@ export default {
     },
     run() {
       this.$refs.refDisplay.renderCode();
-    }
-  }
+    },
+  },
 };
 </script>

@@ -1,68 +1,58 @@
 <template>
-  <!-- <Row class="doc-box">
-    <Col v-magnifier span="21">
-      <slot></slot>
-    </Col>
-    <Col span="3">
-      <my-anchor-link
-        :data="data"
-        :loffset="loffset"
-        v-if="showAnchor && data.length"
-      ></my-anchor-link>
-    </Col>
-  </Row>-->
   <div class="doc-box clearfix">
-    <div class="magnBox doc-box-content" v-magnifier>
+    <div class="magnBox doc-box-content"
+         v-magnifier>
       <slot></slot>
     </div>
     <div class="doc-box-anchor">
-      <my-anchor-link :data="data" :loffset="loffset" v-if="showAnchor && data.length"></my-anchor-link>
+      <my-anchor-link :data="data"
+                      :loffset="loffset"
+                      v-if="showAnchor && data.length"></my-anchor-link>
     </div>
   </div>
 </template>
-
 <script>
 import myAnchorLink from "./my-anchor-link";
 export default {
   props: {
     anchorLink: {
       type: Boolean,
-      default: false
+      default: false,
     },
     tabName: {
-      type: String
+      type: String,
     },
     className: {
-      type: String
+      type: String,
     },
     attributeName: {
       type: Boolean,
-      default: false
+      default: false,
     },
     loffset: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   data() {
     return {
       data: [],
-      showAnchor: false
+      showAnchor: false,
     };
   },
   watch: {
-    anchorLink: function() {
+    anchorLink: function () {
       this.getDocumentList();
-    }
+    },
   },
   mounted() {
     // 接收左侧导航触发scrollTop=0后，为重新渲染锚点anchor做准备
-    this.$bus.$on("init-Anchor-scrollTop-notice", data => {
+    this.$bus.$on("init-Anchor-scrollTop-notice", (data) => {
       this.showAnchor = data;
     });
     this.getDocumentList();
   },
   components: {
-    myAnchorLink
+    myAnchorLink,
   },
   methods: {
     /**
@@ -74,22 +64,22 @@ export default {
       let allEles = document.querySelectorAll(this.className);
 
       let accumulator = [];
-      allEles.forEach(item => {
+      allEles.forEach((item) => {
         accumulator.push({
           title: this.attributeName
             ? item.getAttribute("name")
             : item.innerText,
-          href: "#" + item.id
+          href: "#" + item.id,
         });
       });
       this.data = accumulator;
       // 渲染锚点anchor
       this.showAnchor = true;
-    }
+    },
   },
   destroyed() {
     this.$bus.$off("init-Anchor-scrollTop-notice");
-  }
+  },
 };
 </script>
 <style lang="less">

@@ -1,5 +1,5 @@
 export default {
-    id: 'basic-transfer',
+    id: 'basic',
     title: '基础穿梭框',
     content: `<template>
     <main>

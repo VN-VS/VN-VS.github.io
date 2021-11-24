@@ -11,20 +11,23 @@
 
     &-case {
         padding: 0 20px;
-
-        
     }
 
     &-body {
         position: relative;
 
         &-run {
-            position: absolute;
-            top     : 10px;
-            right   : 16px;
-            z-index : 99;
-            cursor  : pointer;
-            color   : #b2b2b2;
+            position : absolute;
+            top      : 10px;
+            right    : 16px;
+            z-index  : 99;
+            cursor   : pointer;
+            color    : #b2b2b2;
+            font-size: 12px;
+
+            span:hover {
+                color: #53606c;
+            }
         }
     }
 
@@ -61,10 +64,11 @@
         p {
             margin: 5px;
         }
+
         code {
             background-color: #fff5f5;
             font-family     : SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
-            color           : #fa795e;
+            color           : @code-tips-color;
         }
     }
 }

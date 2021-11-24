@@ -1,5 +1,5 @@
 export default {
-  id: 'basic-transfer',
+  id: 'search',
   title: '搜索',
   content: `<template>
   <main>
