@@ -92,5 +92,5 @@ export default {
     };
     </script>
     `,
-  desc: '通过设置 <code> noMove：left </code> 控制禁止左移动，<code> noMove：right </code> 控制右移。',
+  desc: '通过设置 <code> noMove：left </code> 禁止向左移动，<code> noMove：right </code> 禁止向右移动，',
 }
