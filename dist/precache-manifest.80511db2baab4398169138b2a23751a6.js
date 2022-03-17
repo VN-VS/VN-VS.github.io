@@ -24,20 +24,20 @@ self.__precacheManifest = [
     "url": "dist/js/chunk-vendors.4367797d.js"
   },
   {
-    "revision": "6ed79fa2562d57da087778e08089cf07",
-    "url": "dist/img/iconfont.6ed79fa2.svg"
-  },
-  {
-    "revision": "7fb5af4d795b20e638afa2e104de09cb",
-    "url": "dist/fonts/iconfont.7fb5af4d.woff"
-  },
-  {
     "revision": "ad8250123758c707510974c072ef2d06",
     "url": "dist/fonts/iconfont.ad825012.eot"
   },
   {
     "revision": "5d2cd463d5cfb0f3cd9c96266c777a4d",
     "url": "dist/fonts/iconfont.5d2cd463.ttf"
+  },
+  {
+    "revision": "6ed79fa2562d57da087778e08089cf07",
+    "url": "dist/img/iconfont.6ed79fa2.svg"
+  },
+  {
+    "revision": "7fb5af4d795b20e638afa2e104de09cb",
+    "url": "dist/fonts/iconfont.7fb5af4d.woff"
   },
   {
     "revision": "143146fa24554ae2c5ac0a3982abb952",
@@ -48,12 +48,12 @@ self.__precacheManifest = [
     "url": "dist/fonts/ionicons.d535a25a.ttf"
   },
   {
-    "revision": "99ac3308dd8ee14f749f51538d0d5b9e",
-    "url": "dist/fonts/ionicons.99ac3308.woff"
-  },
-  {
     "revision": "a2c4a261a239aa84463dc70e4bac9b9a",
     "url": "dist/img/ionicons.a2c4a261.svg"
+  },
+  {
+    "revision": "99ac3308dd8ee14f749f51538d0d5b9e",
+    "url": "dist/fonts/ionicons.99ac3308.woff"
   },
   {
     "revision": "2e49d8529b31f287ee8bc6eba23272fa",
@@ -84,15 +84,15 @@ self.__precacheManifest = [
     "url": "dist/lib/random_str.js"
   },
   {
-    "revision": "49d16de1449e6099d04a6aacf4bfff72",
-    "url": "dist/img/login-logo.png"
-  },
-  {
     "revision": "05f8b46b83f7ee18f89aba66240681fb",
     "url": "dist/lib/default-code.js"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "dist/robots.txt"
+  },
+  {
+    "revision": "49d16de1449e6099d04a6aacf4bfff72",
+    "url": "dist/img/login-logo.png"
   }
 ];
