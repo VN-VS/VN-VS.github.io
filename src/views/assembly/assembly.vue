@@ -3,7 +3,8 @@
     <container :anchorLink="anchorLink"
                attributeName
                :loffset="80"
-               className=".myCode-content">
+               className=".myCode-content"
+               :update='$route.params.id'>
       <!-- 概述 -->
       <h2 class='assembly-title'>概述</h2>
       <code-summary :data="code.summary"></code-summary>

@@ -1,7 +1,7 @@
 export default {
-  id: 'multistage',
-  title: '多级穿梭框',
-  content: `<template>
+    id: 'multistage',
+    title: '多级穿梭框',
+    content: `<template>
         <main>
           <rd-transfer
             :data="data"
@@ -81,6 +81,19 @@ export default {
                     label: "深圳 2"
                   }
                 ]
+              },
+              {
+                title: "title 4",
+                data: [
+                  {
+                    key: "11",
+                    label: "吉林 1"
+                  },
+                  {
+                    key: "12",
+                    label: "吉林 2"
+                  }
+                ]
               }
             ]
           };
@@ -88,5 +101,5 @@ export default {
       };
       </script>
       `,
-  desc: '根据 <code> data </code> 长度渲染穿梭框数量，长度不限。',
+    desc: '根据 <code> data </code> 长度渲染穿梭框数量，长度不限。'
 }

@@ -1,13 +1,14 @@
 <template>
   <div class="doc-box clearfix">
-    <div class="magnBox doc-box-content"
-         v-magnifier>
+    <div class="magnBox doc-box-content" v-magnifier>
       <slot></slot>
     </div>
     <div class="doc-box-anchor">
-      <my-anchor-link :data="data"
-                      :loffset="loffset"
-                      v-if="showAnchor && data.length"></my-anchor-link>
+      <my-anchor-link
+        :data="data"
+        :loffset="loffset"
+        v-if="showAnchor && data.length"
+      ></my-anchor-link>
     </div>
   </div>
 </template>
@@ -32,6 +33,10 @@ export default {
     loffset: {
       type: Number,
     },
+    update: {
+      type: [String, Number],
+      default: "",
+    },
   },
   data() {
     return {
@@ -43,12 +48,13 @@ export default {
     anchorLink: function () {
       this.getDocumentList();
     },
+    update() {
+      this.$nextTick(() => {
+        this.getDocumentList();
+      });
+    },
   },
   mounted() {
-    // 接收左侧导航触发scrollTop=0后，为重新渲染锚点anchor做准备
-    this.$bus.$on("init-Anchor-scrollTop-notice", (data) => {
-      this.showAnchor = data;
-    });
     this.getDocumentList();
   },
   components: {
@@ -62,7 +68,6 @@ export default {
     getDocumentList() {
       if (!this.anchorLink) return false;
       let allEles = document.querySelectorAll(this.className);
-
       let accumulator = [];
       allEles.forEach((item) => {
         accumulator.push({
@@ -76,9 +81,6 @@ export default {
       // 渲染锚点anchor
       this.showAnchor = true;
     },
-  },
-  destroyed() {
-    this.$bus.$off("init-Anchor-scrollTop-notice");
   },
 };
 </script>

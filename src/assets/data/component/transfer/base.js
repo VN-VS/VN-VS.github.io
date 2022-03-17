@@ -1,7 +1,7 @@
 export default {
-  id: 'basic',
-  title: '基础穿梭框',
-  content: `<template>
+    id: 'basic',
+    title: '基础穿梭框',
+    content: `<template>
     <main>
       <rd-transfer
         :data="data"
@@ -23,8 +23,7 @@ export default {
             data: [
               {
                 key: "1",
-                label: "北京 1",
-                disabled:true
+                label: "北京 1"
               },
               {
                 key: "2",
@@ -54,12 +53,10 @@ export default {
               {
                 key: "7",
                 label: "上海 1",
-                disabled:true
               },
               {
                 key: "8",
                 label: "上海 2",
-                disabled:true
               },
               {
                 key: "9",
@@ -70,8 +67,33 @@ export default {
                 label: "上海 4"
               },
               {
-                key: "5",
+                key: "11",
                 label: "上海 5"
+              }
+            ]
+          },
+          {
+            title: "title 3",
+            data: [
+              {
+                key: "12",
+                label: "深圳 1",
+              },
+              {
+                key: "13",
+                label: "深圳 2"
+              },
+              {
+                key: "14",
+                label: "深圳 3" 
+              },
+              {
+                key: "15",
+                label: "深圳 4"
+              },
+              {
+                key: "16",
+                label: "深圳 5"
               }
             ]
           }
@@ -86,5 +108,5 @@ export default {
   };
   </script>
   `,
-  desc: '基本用法，展示了 <code> data </code>、每行的渲染函数 <code> render-format </code> 以及回调函数 <code> on-keys-change </code>、<code> on-data-change </code> 的用法。',
+    desc: '基本用法，展示了 <code> data </code>、每行的渲染函数 <code> render-format </code> 以及回调函数 <code> on-keys-change </code>、<code> on-data-change </code> 的用法。'
 }

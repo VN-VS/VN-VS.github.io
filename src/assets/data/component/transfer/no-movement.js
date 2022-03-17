@@ -1,7 +1,7 @@
 export default {
-  id: 'movement',
-  title: '禁止移动',
-  content: `<template>
+    id: 'movement',
+    title: '禁止移动',
+    content: `<template>
       <main>
         <rd-transfer
           :data="data"
@@ -63,8 +63,7 @@ export default {
                 },
                 {
                   key: "9",
-                  label: "上海 3",
-                  noMove: "right"
+                  label: "上海 3"
                 },
                 {
                   key: "10",
@@ -76,12 +75,16 @@ export default {
               title: "title 3",
               data: [
                 {
-                  key: "9",
+                  key: "11",
                   label: "深圳 1 禁止左移",
                   noMove: "left"
                 },
                 {
-                  key: "10",
+                  key: "12",
+                  label: "深圳 2"
+                },
+                {
+                  key: "13",
                   label: "深圳 2"
                 }
               ]
@@ -92,5 +95,5 @@ export default {
     };
     </script>
     `,
-  desc: '通过设置 <code> noMove：left </code> 禁止向左移动，<code> noMove：right </code> 禁止向右移动，',
+    desc: '通过设置 <code> noMove：left </code> 禁止向左移动，<code> noMove：right </code> 禁止向右移动，'
 }
