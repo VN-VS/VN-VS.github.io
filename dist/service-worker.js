@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "dist/precache-manifest.80511db2baab4398169138b2a23751a6.js"
+  "/dist/precache-manifest.9db9aee4db07bb844fd12efe313d2d4f.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "ryDesignIo"});
