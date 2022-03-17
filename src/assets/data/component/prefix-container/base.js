@@ -32,9 +32,12 @@ export default {
     </rd-prefix-container>
 
     <rd-prefix-container style='margin-top:16px'>
-      <span slot="prepend">前缀</span>
+      <Select v-model="select1" slot="prepend" style="width: 80px">
+        <Option value="http">http://</Option>
+        <Option value="https">https://</Option>
+      </Select>
       <InputNumber :max="10" :min="1" v-model="value1" class='prefix-container-basic-number'></InputNumber>
-      <span slot="append">后缀</span>
+      <Button slot="append" icon="ios-search"></Button>
     </rd-prefix-container>
   </main>
 </template>
@@ -43,6 +46,7 @@ export default {
   data() {
     return {
       value1:1,
+      select1: 'http',
       accountIds:[],
       accountList: [
         {
