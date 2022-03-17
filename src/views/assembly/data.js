@@ -1,7 +1,11 @@
 
 import transfer from '@/assets/data/component/transfer/index.js'
+import multiCascader from '@/assets/data/component/multi-cascader/index.js'
+import prefixContainer from '@/assets/data/component/prefix-container/index.js'
 const mappingComponent = {
-    'components-transfer': transfer
+    'components-transfer': transfer,
+    'components-multi-cascader': multiCascader,
+    'components-prefix-container': prefixContainer,
 }
 export const getRunTemplate = (componentId, exampleId) => {
     if (!componentId || !exampleId) {

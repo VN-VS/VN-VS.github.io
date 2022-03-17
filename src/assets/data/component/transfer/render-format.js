@@ -1,14 +1,14 @@
 export default {
-    id: 'format',
-    title: '自定义渲染行数据',
-    content: `<template>
+  id: 'format',
+  title: '自定义渲染行数据',
+  content: `<template>
     <main>
-      <ry-transfer
+      <rd-transfer
         :data="data"
         :render-format="render1"
         @on-keys-change="selectedKeys=$event"
         @on-data-change="selectedData=$event"
-      ></ry-transfer>
+      ></rd-transfer>
     </main>
   </template>
   <script>
@@ -97,5 +97,5 @@ export default {
   };
   </script>
   `,
-    desc: '可以通过 <code> render-format </code> 来渲染复杂的数据。',
-  }
+  desc: '可以通过 <code> render-format </code> 来渲染复杂的数据。',
+}

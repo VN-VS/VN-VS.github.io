@@ -23,6 +23,20 @@ export default {
             englishName: "Transfer",
             href: "components-transfer",
             child: []
+          },
+          {
+            id: "3-2-2",
+            name: "下拉多级复选框",
+            englishName: "MultiCascader",
+            href: "components-multi-cascader",
+            child: []
+          },
+          {
+            id: "3-2-3",
+            name: "前缀容器",
+            englishName: "PrefixContainer",
+            href: "components-prefix-container",
+            child: []
           }]
         }
       ]
@@ -168,7 +182,7 @@ export default {
       name: "设计",
       path: "design",
       search: true,
-      child:[{
+      child: [{
         id: "2-1",
         name: "概述",
         englishName: "Overview",

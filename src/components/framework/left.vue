@@ -1,37 +1,39 @@
 <template>
   <div>
-    <search-components v-if="searchOpen" :firstNav="firstNav" @on-search-change="setActiveName"></search-components>
+    <search-components v-if="searchOpen"
+                       :firstNav="firstNav"
+                       @on-search-change="setActiveName"></search-components>
     <template v-for="val in data">
-      <Menu
-        width="auto"
-        :key="val.id"
-        v-if="val.id === activeMenu"
-        :active-name="activeName"
-        :open-names="subActiveName"
-        @on-select="setActiveName"
-      >
+      <Menu width="auto"
+            :key="val.id"
+            v-if="val.id === activeMenu"
+            :active-name="activeName"
+            :open-names="subActiveName"
+            @on-select="setActiveName">
         <template v-for="obj in val.child">
           <!-- single -->
           <template v-if="!obj.child.length">
-            <Menu-item :name="obj.id" :key="obj.id" :to="'/'+val.path+'/'+obj.href+secondLevelType">
+            <Menu-item :name="obj.id"
+                       :key="obj.id"
+                       :to="'/'+val.path+'/'+obj.href+secondLevelType">
               <span>{{ obj.name }}</span>
               <span class="layout-left-span">{{ obj.englishName }}</span>
             </Menu-item>
           </template>
           <!-- multiple -->
           <template v-else>
-            <Submenu :name="obj.id" :key="obj.id">
+            <Submenu :name="obj.id"
+                     :key="obj.id">
               <template slot="title">
-                <Icon :type="obj.icon" v-if="obj.icon" />
+                <Icon :type="obj.icon"
+                      v-if="obj.icon" />
                 {{ obj.name }}
               </template>
               <template v-for="item in obj.child">
                 <template v-if="!item.child.length">
-                  <Menu-item
-                    :name="item.id"
-                    :key="item.id"
-                    :to="'/'+val.path+'/'+item.href+ secondLevelType"
-                  >
+                  <Menu-item :name="item.id"
+                             :key="item.id"
+                             :to="'/'+val.path+'/'+item.href+ secondLevelType">
                     <span>{{ item.name }}</span>
                     <span class="layout-left-span">{{ item.englishName }}</span>
                   </Menu-item>
@@ -65,7 +67,7 @@ import searchComponents from "./searchComponents";
 
 export default {
   components: {
-    searchComponents
+    searchComponents,
   },
   inject: ["app"],
   data() {
@@ -76,7 +78,7 @@ export default {
       subActiveName: [],
       firstNav: null,
       // searchList: [],
-      searchOpen: false
+      searchOpen: false,
     };
   },
   computed: {
@@ -90,10 +92,10 @@ export default {
         this.$route.name === "components" &&
         this.$route.params.id !== "components-use"
       ) {
-        i = this.$route.params.type ? `/${this.$route.params.type}` : "/file";
+        i = this.$route.params.type ? `/${this.$route.params.type}` : "";
       }
       return i;
-    }
+    },
   },
   watch: {
     // $route(to) {
@@ -113,8 +115,8 @@ export default {
           this.init();
         }
       },
-      deep: true
-    }
+      deep: true,
+    },
   },
   mounted() {
     // 获取菜单数据
@@ -180,13 +182,13 @@ export default {
       if (activeName) {
         this.activeName = activeName;
       }
-    }
+    },
   },
   destroyed() {
     this.$bus.$off("on-top-menu-change");
     // this.$bus.$off("top-getData-end");
     // this.$bus.$off("menu-change");
-  }
+  },
 };
 </script>
 <style lang="less" scoped>

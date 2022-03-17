@@ -3,13 +3,13 @@ export default {
   title: '操作文案',
   content: `<template>
     <main>
-      <ry-transfer
+      <rd-transfer
         :data="data"
         :render-format="render1"
         :operations="['To left','To right']"
         @on-keys-change="selectedKeys=$event"
         @on-data-change="selectedData=$event"
-      ></ry-transfer>
+      ></rd-transfer>
     </main>
   </template>
   <script>

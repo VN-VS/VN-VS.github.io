@@ -1,14 +1,14 @@
 export default {
-    id: 'multistage',
-    title: '多级',
-    content: `<template>
+  id: 'multistage',
+  title: '多级穿梭框',
+  content: `<template>
         <main>
-          <ry-transfer
+          <rd-transfer
             :data="data"
             filterable
             @on-keys-change="selectedKeys=$event"
             @on-data-change="selectedData=$event"
-          ></ry-transfer>
+          ></rd-transfer>
         </main>
       </template>
       <script>
@@ -88,5 +88,5 @@ export default {
       };
       </script>
       `,
-    desc: '根据 <code> data </code> 长度渲染穿梭框数量，长度不限。',
-  }
+  desc: '根据 <code> data </code> 长度渲染穿梭框数量，长度不限。',
+}

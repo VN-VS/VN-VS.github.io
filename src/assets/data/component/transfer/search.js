@@ -3,14 +3,14 @@ export default {
   title: '搜索',
   content: `<template>
   <main>
-    <ry-transfer
+    <rd-transfer
       :data="data"
       filterable
       :render-format="render1"
       :filter-method="filterMethod"
       @on-keys-change="selectedKeys=$event"
       @on-data-change="selectedData=$event"
-    ></ry-transfer>
+    ></rd-transfer>
   </main>
 </template>
 <script>
