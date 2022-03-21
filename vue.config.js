@@ -1,6 +1,6 @@
 module.exports = {
-    lintOnSave: undefined,
+    lintOnSave: true,
     runtimeCompiler: true,
-    publicPath: '/dist',
+    publicPath: process.env.NODE_ENV === 'production' ? '/dist' : '/',
     outputDir: 'dist'
 }

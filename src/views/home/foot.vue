@@ -28,8 +28,13 @@ export default {
         [
           {
             name: "刘鹏飞",
-            info: "pengfei.liu@reyu.com ( 前端工程师 )",
+            info: "liupengfei@reyu.com ( 前端工程师 )",
             photo: require("../../assets/img/lpf.png")
+          },
+          {
+            name: "杨玉峰",
+            info: "yangyufeng@reyu.com ( 前端工程师 )",
+            photo: require("../../assets/img/yyf.jpeg")
           }
         ]
       ]

@@ -21,5 +21,5 @@ Vue.use(ryDesign);
 
 import "iview/dist/styles/iview.css";
 import "iview-editor/dist/iview-editor.css";
-// import 'ry-design/dist/ry-design.css';
+import 'ry-design/dist/styles/main.css';
 
