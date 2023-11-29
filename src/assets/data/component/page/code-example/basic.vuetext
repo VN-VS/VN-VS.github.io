@@ -1,0 +1,11 @@
+<template>
+    <rd-page :total="1500"></rd-page>
+</template>
+<script>
+export default {
+  data() {
+    return {}
+  }
+}
+</script>
+

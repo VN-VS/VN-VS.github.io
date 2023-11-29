@@ -1,0 +1,38 @@
+.card {
+  width: 100%;
+  height: auto;
+  padding: 24px 160px 24px 0;
+  background: #fff;
+  box-shadow: inset 0 -1px 0 0 #e7e9eb;
+  transition: transform .4s ease 0s;
+  &:hover {
+    transform: translateX(-5px);
+  }
+  &-title {
+    color: rgba(23, 35, 61, 0.75);
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  h2 {
+    padding-bottom: 12px;
+    color: #17233d;
+    font-family: PingFangSC-Medium;
+    font-size: 24px;
+    line-height: 38px;
+  }
+  p {
+    display: -webkit-box;
+    overflow: hidden;
+    color: rgba(23, 35, 61, 0.75);
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    line-height: 24px;
+    text-overflow: -o-ellipsis-lastline;
+    text-overflow: ellipsis;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+            line-clamp: 2;
+  }
+}

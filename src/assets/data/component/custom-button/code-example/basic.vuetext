@@ -1,0 +1,32 @@
+<template>
+  <div>
+    <rd-button
+      class="m-r-8"
+      type="primary">
+      主要按钮
+    </rd-button>
+    <rd-button
+      class="m-r-8"
+      type="default">
+      辅助按钮
+    </rd-button>
+    <rd-button
+      class="m-r-8"
+      type="dashed">
+      辅助按钮
+    </rd-button>
+    <rd-button
+      class="m-r-8"
+      type="dark">
+      灰底按钮
+    </rd-button>
+    <rd-button
+      class="m-r-8"
+      type="text">
+      文字按钮
+    </rd-button>
+  </div>
+</template>
+<script>
+export default {}
+</script>

@@ -1,0 +1,76 @@
+<template>
+  <div style="margin: 20px; width: 400px">
+    <div style="margin-bottom: 20px;">
+      <h3>落地页、监测链接、直达链接、小程序链接等</h3>
+      <rd-text-item-show :tooltip="basic.text" two-line-display :data="basic">
+        <template #btnGroup>
+          <Icon style="width: 50px" type="md-create" />
+        </template>
+      </rd-text-item-show>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <h3>抖音号、电商店铺等</h3>
+      <rd-text-item-show type="title" :data="title">
+        <template #btnGroup>
+          <Icon style="width: 50px" type="md-create" />
+        </template>
+      </rd-text-item-show>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <h3>事件资产、转化跟踪、优化目标等</h3>
+      <rd-text-item-show type="title" :data="titleInfo">
+        <template #btnGroup>
+          <Icon style="width: 50px" type="md-create" />
+        </template>
+      </rd-text-item-show>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <h3>商品推广</h3>
+      <rd-text-item-show type="classify" :data="classify">
+        <template #btnGroup>
+          <Icon style="width: 50px" type="md-create" />
+        </template>
+      </rd-text-item-show>
+    </div>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        basic: {
+          text: '第三方落地页自动保存-2021-11-14'
+        },
+        titleInfo: {
+          title: '蝉鸣剧场 - 激活',
+          subTitle: '不联调可用',
+
+        },
+        title: {
+          title: '三分钟工作室',
+          subTitle: '1087677119',
+          thumbnailInfo: {
+            style: {
+              'border-radius': '50%'
+            },
+            src: 'https://p3.douyinpic.com/aweme/100x100/aweme-avatar/tos-cn-avt-0015_1a800195d0c386c281c4886b50f12536.jpeg?from=4010531038'
+          }
+        },
+        classify: {
+          classify: {
+            name: '商品库-优选',
+            id: '6803267136882468'
+          },
+          info: {
+            name: '鲜活皮皮虾（大虾菇10-12只） (250g±10g)/份',
+            id: '100189712293405'
+          },
+          thumbnail: 'https://p3.douyinpic.com/aweme/100x100/aweme-avatar/tos-cn-avt-0015_1a800195d0c386c281c4886b50f12536.jpeg?from=4010531038'
+        }
+      }
+    }
+  }
+</script>

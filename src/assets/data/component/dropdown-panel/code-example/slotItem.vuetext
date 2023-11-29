@@ -1,0 +1,20 @@
+<template>
+  <div>
+    <rd-dropdown-panel :data="listData">
+      <template #item="{ data }">{{ data.label }} + {{ data.value }}</template>
+    </rd-dropdown-panel>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+         listData: [
+          { label: '驴打滚', value: 'value1'},
+          { label: '炸酱面', value: 'value2'},
+      ]
+    }
+  }
+}
+</script>

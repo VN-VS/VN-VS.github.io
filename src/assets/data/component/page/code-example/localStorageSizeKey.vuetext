@@ -1,0 +1,14 @@
+<template>
+    <rd-page
+      type="m-small"
+      local-storage-size-key="m-small"
+      :total="500"></rd-page>
+</template>
+
+<script>
+export default {
+  data() {
+    return {}
+  }
+}
+</script>

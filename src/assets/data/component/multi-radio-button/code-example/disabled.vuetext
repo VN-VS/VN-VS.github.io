@@ -1,0 +1,45 @@
+<template>
+  <main>
+    <rd-multi-radio-button v-model="value2" all-triangle :button-list="buttonList2" :disabled="handleDisabled">
+    </rd-multi-radio-button>
+  </main>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        value2: ['CUSTOM2'],
+        buttonList2: [
+          {
+            label: '多选1',
+            value: 'CUSTOM1',
+            isMulti: true,
+          },
+          {
+            label: '多选2不可用',
+            value: 'CUSTOM2',
+            isMulti: true,
+          },
+          {
+            label: '单选1',
+            value: 'CUSTOM3',
+            isMulti: false,
+          },
+          {
+            label: '单选2不可用',
+            value: 'CUSTOM4',
+            isMulti: false,
+          }
+        ]
+      };
+    },
+    methods: {
+      handleDisabled(item) {
+        if (item.value === 'CUSTOM4' || item.value === 'CUSTOM2') {
+          return true
+        }
+        return false
+      }
+    }
+  };
+</script>

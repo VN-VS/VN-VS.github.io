@@ -1,0 +1,109 @@
+<template>
+  <main>
+    <rd-table-columns
+      :data="list"
+      :edit-call-back="editCallBack"></rd-table-columns>
+  </main>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      list: [
+        {
+          key: 'a',
+          hide: false,
+          check: false,
+          title: '属性指标',
+          children: [
+            {
+              key: 'aa',
+              hide: false,
+              check: true,
+              title: '广告组属性',
+              children: [
+                {
+                  key: 'aaa1',
+                  hide: false,
+                  slot: 'aaa1',
+                  check: true,
+                  fixed: 'left',
+                  title: '广告组名称',
+                  disabled: true,
+                  unlock: true,
+                  minWidth: 180,
+                  sortable: 'custom',
+                  // 前缀
+                  prefix: {
+                    icon: 'ios-unlock',
+                    content: ''
+                  },
+                  // 后缀
+                  suffix: {
+                    icon: 'ios-information-circle',
+                    content: ''
+                  }
+                },
+                {
+                  key: 'aaa2',
+                  hide: false,
+                  check: true,
+                  title: '广告组ID',
+                  edit: true, // 编辑
+                  minWidth: 120,
+                  sortable: 'custom'
+                },
+                {
+                  key: 'aaa3',
+                  hide: false,
+                  check: true,
+                  title: '广告组状态',
+                  minWidth: 120
+                },
+                {
+                  key: 'aaa4',
+                  hide: false,
+                  check: true,
+                  title: '媒体',
+                  minWidth: 150,
+                  sortable: 'custom'
+                },
+                {
+                  key: 'aaa5',
+                  hide: false,
+                  check: true,
+                  title: '媒体账号',
+                  minWidth: 250,
+                  sortable: 'custom'
+                },
+                {
+                  key: 'aaa6',
+                  hide: false,
+                  check: true,
+                  title: '应用',
+                  checked: true,
+                  disable: true,
+                  minWidth: 100
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  methods: {
+    editCallBack(data) {
+      // 请求接口
+      return new Promise((resolve, reject) => {
+        if (data.title.length === 1) {
+          resolve(data.title)
+        } else {
+          reject()
+          this.$Message.error('error')
+        }
+      })
+    }
+  }
+}
+</script>

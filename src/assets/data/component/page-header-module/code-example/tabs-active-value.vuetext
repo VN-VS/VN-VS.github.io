@@ -1,0 +1,31 @@
+<template>
+  <main>
+    <rd-page-header-module isTabs :tabsList="tabsList" :activeValue="'breadcrumb'">
+      <template #extra>
+        <p>在右边放点东西</p>
+      </template>
+    </rd-page-header-module>
+  </main>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        tabsList: [
+          {
+            label: '模块头部组件',
+            name: 'page-header-module'
+          },
+          {
+            label: '页头组件',
+            name: 'page-header'
+          },
+          {
+            label: '面包屑组件',
+            name: 'breadcrumb'
+          }
+        ]
+      };
+    }
+  };
+</script>

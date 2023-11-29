@@ -1,0 +1,59 @@
+<template>
+  <div class="demo-text-center">
+    <div>
+      <rd-image-group
+        style="margin: 16px 24px 10px 0"
+        :size="2"
+        :data="data"
+        :width="216"
+        :height="120"></rd-image-group>
+      有背景色，无圆角，无padding
+    </div>
+    <div>
+      <rd-image-group
+        style="margin: 16px 24px 10px 0"
+        :size="1"
+        :data="horizontalData"
+        background="transparent"
+        :width="216"
+        :height="120"
+        :styles="borderStyles"></rd-image-group>
+      无背景色，有圆角，padding：2px
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      borderStyles: {
+        borderRadius: '5px',
+        borderWidth: '1px',
+        borderColor: '#e0e0e8',
+        padding: '2px'
+      },
+      data: [
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+        }
+      ],
+      horizontalData: [
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+        }
+      ]
+    }
+  }
+}
+</script>
+<style scoped>
+.demo-text-center {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  text-align: center;
+}
+</style>

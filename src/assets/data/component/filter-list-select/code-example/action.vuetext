@@ -1,0 +1,148 @@
+<template>
+  <Row>
+    <rd-filter-list-select
+          v-model="selectMultiple"
+          label="多选:"
+          :data="data"
+          :width="260"
+          :input-width="260"
+          multiple
+          show-action
+          action-text="若没找到您所投放的小游戏，可"
+          action-button-text="添加小游戏"
+          :action-rule-validate="actionRuleValidate"
+          :action-count="actionCountFn"
+          :action-total="actionTotal"
+          @on-action-ok="handleActionOk"></rd-filter-list-select>
+    <rd-filter-list-select
+          v-model="selectRadio"
+          label="单选:"
+          :data="data"
+          :width="260"
+          :input-width="260"
+          show-action
+          action-text="若没找到您所投放的小游戏，可"
+          action-button-text="添加小游戏"
+          :action-rule-validate="actionRuleValidate"
+          :action-count="actionCountFn"
+          :action-total="actionTotal"
+          :before-action-ok='beforeActionOk'
+          style="margin-left:16px"
+          @on-action-ok="handleActionRadioOk"></rd-filter-list-select>
+    <rd-filter-list-select
+          v-model="selectRadio"
+          label="是否隐藏字数统计:"
+          :data="data"
+          :width="260"
+          :input-width="260"
+          show-action
+          action-text="若没找到您所投放的小游戏，可"
+          action-button-text="添加小游戏"
+          :action-rule-validate="actionRuleValidate"
+          :action-count="actionCountFn"
+          :action-total="actionTotal"
+          action-hide-total
+          style="margin-left:16px"
+          @on-action-ok="handleActionRadioOk"></rd-filter-list-select>
+  </Row>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      selectMultiple: [],
+      selectRadio:'',
+      actionRuleValidate: {
+        required: true,
+        validator: (rule, value, callback) => {
+          if (value === '') {
+            callback(
+              new Error(
+                '请填写'
+              )
+            )
+          } else if (this.actionCountFn(value) > this.actionTotal) {
+            callback(new Error(`长度不可大于${this.actionTotal}`))
+          } else {
+            callback()
+          }
+        },
+        trigger: 'change'
+      },
+      actionTotal: 120,
+      data: [
+        {
+          label: '北京',
+          value: 'beijin'
+        },
+        {
+          label: '上海',
+          value: 'shanghai'
+        },
+        {
+          label: '武汉',
+          value: 'wuhan'
+        },
+        {
+          label: '深圳',
+          value: 'shenzhen'
+        },
+        {
+          label: '广州',
+          value: 'guangzhou'
+        },
+        {
+          label: '大连',
+          value: 'dalian'
+        },
+        {
+          label: '哈尔滨',
+          value: 'haerbin'
+        },
+        {
+          label: '吉林',
+          value: 'jiling'
+        }
+      ]
+    }
+  },
+  methods:{
+    actionCountFn(value) {
+      if (typeof value === 'string') {
+        return value.split('').reduce((total, cur) => {
+          return (total += /^[\u4e00-\u9fa5。？！，、；：“”（）《》￥——……【】‘’]$/.test(cur)
+            ? 1
+            : 0.5)
+        }, 0)
+      }
+      return 0
+    },
+    handleItemDelete({ row, index }) {
+      this.selectMultiple = this.selectMultiple.filter(val => val !== row.value)
+      this.data.splice(index, 1)
+    },
+    handleActionOk(label) {
+      this.data.unshift({
+        value:label,
+        label
+      })
+      this.selectMultiple.unshift(label)
+    },
+    handleActionRadioOk(label){
+      this.data.unshift({
+        value:label,
+        label
+      })
+      this.selectRadio=label
+    },
+    beforeActionOk(label) {
+      return new Promise(resolve => {
+        this.$Message.info('模拟亲请求接口、2秒后添加成功')
+        setTimeout(() => {
+          resolve()
+        },2000)
+      })
+    }
+  }
+}
+</script>

@@ -1,0 +1,33 @@
+<template>
+  <main>
+    <rd-page-header title="我是标题" subTitle="我是子标题" backIcon :breadcrumb="breadcrumbItems" :ghost="false" @back="back">
+    </rd-page-header>
+  </main>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        breadcrumbItems: [
+          {
+            to: '/a',
+            name: '一级页面'
+          },
+          {
+            to: '/b',
+            name: '二级页面'
+          },
+          {
+            name: '三级页面'
+          }
+        ],
+        avatar: 'https://fc1tn.baidu.com/it/u=4039863068,2012609708&fm=202&mola=new&crop=v1'
+      };
+    },
+    methods: {
+      back(e) {
+        alert('您返回了！');
+      }
+    }
+  };
+</script>

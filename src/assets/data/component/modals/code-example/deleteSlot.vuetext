@@ -1,0 +1,42 @@
+<template>
+  <main>
+    <Button @click="onClickDelete2">删除弹框slot可替换</Button>
+    <div v-if="deleteVisible">
+      <rd-modals
+        v-model="deleteVisible"
+        :width="400"
+        class-name="center-modal mini-scroll-y"
+        @on-cancel="deleteHandleCancel"
+        @on-ok="deleteHandleCancel">
+        <div slot="content">
+          <rd-delete-modals :delete-has-close="deleteHasClose">
+            <span slot="delete-modal-content">这是一段利用slot插入内容的事例</span>
+            <span slot="delete-modal-img">
+                <span
+                style="font-size: 32px"
+                class="icon iconfont ry-icon-suo"></span>
+            </span>
+          </rd-delete-modals>
+        </div>
+      </rd-modals>
+    </div>
+  </main>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        deleteVisible: false,
+        deleteHasClose: false,
+      };
+    },
+    methods: {
+      deleteHandleCancel() {
+        this.deleteVisible = false
+      },
+      onClickDelete2() {
+        this.deleteVisible = true
+      }
+    }
+  };
+</script>

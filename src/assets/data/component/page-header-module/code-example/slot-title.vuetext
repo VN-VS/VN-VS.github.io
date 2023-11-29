@@ -1,0 +1,16 @@
+<template>
+  <main>
+    <rd-page-header-module>
+      <template #singleTitle> 我是标题插槽 </template>
+      <template #subTitle> 我是子标题插槽 </template>
+      <template #extra> 右侧插槽 </template>
+    </rd-page-header-module>
+  </main>
+</template>
+<script>
+  export default {
+    data() {
+      return {};
+    }
+  };
+</script>

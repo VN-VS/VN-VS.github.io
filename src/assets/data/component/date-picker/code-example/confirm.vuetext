@@ -1,0 +1,24 @@
+<template>
+  <div>
+    <rd-date-picker
+      v-model="time"
+      width="200px"
+      :confirm="false"></rd-date-picker>
+
+      <rd-date-picker
+        style="margin-top: 10px"
+        v-model="time2"
+        width="200px"></rd-date-picker>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      time: [],
+      time2: []
+    }
+  },
+  methods: {}
+}
+</script>

@@ -1,0 +1,42 @@
+<template>
+  <main>
+    <div>
+      <span>输入文本</span>
+      <rd-edit-row-bid :value="value" showTextLimit :maxTextNum="10" :calcTextNumFunc="calcTextNumFunc" title="输入文本"
+        :rules="rules" :confirmFunc="confirmText"></rd-edit-row-bid>
+    </div>
+  </main>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        value: '测试文本',
+        rules: [
+          {
+            validator: (rule, value, callback) => {
+              return new Promise((resolve, reject) => {
+                if (value.length > 10) {
+                  reject(new Error('不能大于10个字符'))
+                } else {
+                  resolve()
+                }
+              })
+            }
+          }
+        ]
+      };
+    },
+    methods: {
+      // 计算文本的长度的方法。传入当前输入的文本，返回计算后的文本长度
+      calcTextNumFunc(val) {
+        return val.length
+      },
+      // 确认了，返回Promise结果，可以异步处理结果在关闭视图。
+      confirmText(value) {
+        this.value = value
+        return Promise.resolve()
+      }
+    }
+  };
+</script>

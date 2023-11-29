@@ -1,0 +1,7 @@
+<template>
+ <rd-empty :not-found-content="null"></rd-empty>
+</template>
+
+<script>
+export default {}
+</script>

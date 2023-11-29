@@ -1,0 +1,53 @@
+ .table {
+
+     .operation-btn {
+         cursor: pointer;
+         color: #3a88fa;
+         margin-right: 16px;
+     }
+
+     .edit-row {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+     }
+
+     /deep/ .rd-edit-row-bid {
+         display: flex;
+     }
+
+     /deep/ .rd-edit-row-bid-icon {
+         display: none;
+         right: 0;
+         top: 0;
+     }
+
+     /deep/ .ivu-table-row-hover {
+         .rd-edit-row-bid-icon {
+             display: block;
+             color: #3a88fa;
+         }
+     }
+
+     /deep/.ivu-tooltip {
+         display: table;
+     }
+
+     /deep/.ivu-tooltip-rel {
+         vertical-align: middle;
+     }
+
+ }
+
+ .page {
+     position: relative;
+     text-align: right;
+     margin: 16px;
+     font-size: 12px;
+
+     .ivu-page-total {
+         position: absolute;
+         top: 0;
+         left: 0;
+     }
+ }

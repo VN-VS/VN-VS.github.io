@@ -1,0 +1,81 @@
+<template>
+  <div>
+    <rd-dropdown-panel
+      type="group"
+      :data="groupData"></rd-dropdown-panel>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      groupData: [
+        {
+          title: '投放账号属性',
+          // 自定义icon
+          icon: 'ry-icon-data', 
+          // 提示内容 
+          tooltip: '????',
+          items: [
+            {
+              label: '投放账户',
+              value: 'value1',
+              disabled: true,
+              tooltip: '投放账户不可选择'
+            },
+            {
+              label: '账户ID',
+              value: 'value2',
+            },
+            {
+              label: '公司名称',
+              value: 'value3'
+            },
+            {
+              label: '媒体',
+              value: 'value4'
+            },
+            {
+              label: '账户日预算',
+              value: 'value5'
+            }
+          ]
+        },
+        {
+          title: '应用下载广告数据',
+          items: [
+            {
+              label: '安卓下载开始数',
+              value: 'value11',
+              disabled: true,
+              tooltip: '我是安卓下载开始数的提示内容'
+            },
+            {
+              label: '安卓下载开始成本的算法',
+              value: 'value12',
+              tooltip: '我是安卓下载开始成本的提示内容'
+            },
+            {
+              label: '安卓下载开始率',
+              value: 'value13'
+            },
+            {
+              label: '安卓下载完成数',
+              value: 'value14'
+            },
+            {
+              label: '安卓下载完成成本',
+              value: 'value15'
+            },
+            {
+              label: '安卓下载完成率',
+              value: 'value16'
+            }
+          ]
+        },
+      ]
+    }
+  }
+}
+</script>

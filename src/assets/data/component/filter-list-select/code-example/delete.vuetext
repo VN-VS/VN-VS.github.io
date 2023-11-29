@@ -1,0 +1,76 @@
+<template>
+  <Row>
+    <rd-filter-list-select
+          v-model="selectMultiple"
+          label="多选:"
+          :data="data"
+          multiple
+          filterable
+          show-item-delete
+          @on-item-delete='handleItemDelete'></rd-filter-list-select>
+    <rd-filter-list-select
+          style="margin-left:16px"
+          v-model="selectRadio"
+          label="单选:"
+          :data="data"
+          filterable
+          show-item-delete
+          @on-item-delete='handleItemDeleteRadio'></rd-filter-list-select>
+  </Row>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      selectMultiple: [],
+      selectRadio:'',
+      data: [
+        {
+          label: '北京',
+          value: 'beijin'
+        },
+        {
+          label: '上海',
+          value: 'shanghai'
+        },
+        {
+          label: '武汉',
+          value: 'wuhan'
+        },
+        {
+          label: '深圳',
+          value: 'shenzhen'
+        },
+        {
+          label: '广州',
+          value: 'guangzhou'
+        },
+        {
+          label: '大连',
+          value: 'dalian'
+        },
+        {
+          label: '哈尔滨',
+          value: 'haerbin'
+        },
+        {
+          label: '吉林',
+          value: 'jiling'
+        }
+      ]
+    }
+  },
+  methods:{
+    handleItemDelete({ row, index }) {
+      this.selectMultiple = this.selectMultiple.filter(val => val !== row.value)
+      this.data.splice(index, 1)
+    },
+    handleItemDeleteRadio({ row, index }) {
+      if (this.selectRadio === row.value) {
+        this.selectRadio = ''
+      }
+      this.data.splice(index, 1)
+    }
+  }
+}
+</script>

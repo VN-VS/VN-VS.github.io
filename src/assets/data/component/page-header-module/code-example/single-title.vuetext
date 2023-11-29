@@ -1,0 +1,19 @@
+<template>
+  <main>
+    <rd-page-header-module singleTitle="我是标题" subTitle="我是子标题">
+      <template #extra>
+        <div>
+          <span>右侧插槽</span>
+          <Button type="info">Info</Button>
+        </div>
+      </template>
+    </rd-page-header-module>
+  </main>
+</template>
+<script>
+  export default {
+    data() {
+      return {};
+    }
+  };
+</script>

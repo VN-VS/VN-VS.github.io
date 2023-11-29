@@ -1,0 +1,24 @@
+<template>
+  <div>
+    <rd-button
+      class="m-r-8"
+      type="primary"
+      loading>
+      主要按钮
+    </rd-button>
+    <rd-button
+      class="m-r-8"
+      type="default"
+      loading>
+      辅助按钮
+    </rd-button>
+    <rd-button
+      type="text"
+      loading>
+      文字按钮
+    </rd-button>
+  </div>
+</template>
+<script>
+export default {}
+</script>

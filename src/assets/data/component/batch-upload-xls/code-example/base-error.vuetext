@@ -1,0 +1,78 @@
+<template>
+    <main>
+        <rd-batch-upload-xls
+          ref="upDataFiles"
+          v-model="isSucceedType"
+          :action="action"
+          :accept="accept"
+          :type="type"
+          :hint-text="hintText"
+          :is-tautology-tooltip="isTautologyTooltip"
+          :tautology-tooltip-content="tautologyTooltipContent"
+          :tautology-text="tautologyText"
+          :error-table="errorTable"
+          :columns-header="columnsHeader"
+          :on-error="handleError"
+          :isClearFile="isClearFile"
+          @tautology="clearData"
+          @clearFile="clearFile">
+          <span slot="hintText">
+            {{ hintText }}
+            <i style="color: blue">下载失败数据</i>
+          </span>
+        </rd-batch-upload-xls>
+    </main>
+  </template>
+  
+  <script>
+  export default {
+    data() {
+      return {
+        action: '',
+        accept: '.xls',
+        type: 'drag',
+        hintText: '',
+        isSucceedType: 'none',
+        errorTable: [],
+        isTautologyTooltip: true,
+        tautologyTooltipContent: '这是一段提示文字',
+        tautologyText: '重新上传',
+        isClearFile: false,
+        columnsHeader: [
+          {
+            title: '错误原因',
+            key: 'title',
+            width: 200
+          },
+          {
+            title: '错误所在行数',
+            key: 'content'
+          }
+        ]
+      }
+    },
+    methods: {
+      handleError() {
+        this.resetData()
+      },
+      clearFile(data, file) {
+        this.clearData()
+      },
+      clearData() {
+        this.isSucceedType = 'none'
+        this.hintText = ''
+        this.errorTable = []
+      },
+      resetData() {
+        this.errorTable = [
+          {
+            title: '上传条目错误',
+            content: '错误条数1，2，3'
+          }
+        ]
+        this.isSucceedType = 'portionSucceed'
+        this.hintText = '上传失败'
+      }
+    }
+  }
+  </script>

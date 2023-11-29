@@ -1,0 +1,18 @@
+<template>
+  <div>
+    <rd-echo-container
+      v-model="inputValue"
+      type="input"
+      label="输入框"
+      placeholder="请输入"></rd-echo-container>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      inputValue: '',
+    }
+  }
+}
+</script>

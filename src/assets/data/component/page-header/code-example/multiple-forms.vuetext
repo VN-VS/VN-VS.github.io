@@ -1,0 +1,45 @@
+<template>
+  <main style="background: #ddd;">
+    <rd-page-header title="我是标题" subTitle="我是子标题" :avatar="avatar" backIcon @back="back">
+      <template>我是主要内容</template>
+      <template #tags>
+        <Icon type="ios-albums" />
+        <Icon type="md-albums" />
+        <Icon type="ios-alert-outline" />
+      </template>
+      <template #extra>
+        <Button type="info">Info</Button>
+        <Button type="success">Success</Button>
+        <Button type="warning">Warning</Button>
+        <Button type="error">Error</Button>
+      </template>
+      <template #footer>我是尾部</template>
+    </rd-page-header>
+    <br>
+    <rd-page-header title="我是标题" subTitle="我是子标题" :avatar="avatar" backIcon :ghost="false" @back="back">
+      <template #backIcon>
+        <span style="background: #ccc;border: 1px solid #000;" title="我是插槽返回按钮">返回</span>
+      </template>
+      <template #avatar>
+        <img width="30" height="30" :src="avatar" title="我是插槽头像">
+      </template>
+      <template #title>我是插槽标题</template>
+      <template #subTitle>我是插槽子标题</template>
+    </rd-page-header>
+  </main>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        avatar:
+          'https://fc1tn.baidu.com/it/u=4039863068,2012609708&fm=202&mola=new&crop=v1'
+      };
+    },
+    methods: {
+      back(e) {
+        alert('您返回了！');
+      }
+    }
+  };
+</script>

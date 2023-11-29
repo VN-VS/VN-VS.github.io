@@ -1,0 +1,64 @@
+<template>
+  <div>
+    <rd-echo-container
+      v-model="selectValue"
+      type="select"
+      label="单选"
+      :data="selectData"></rd-echo-container>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      selectValue: '204822',
+      selectData: [
+        {
+          label: '热云数据01',
+          value: '204822'
+        },
+        {
+          label: '热云数据02',
+          value: '19858972'
+        },
+        {
+          label: '热云数据03',
+          value: '19858973'
+        },
+        {
+          label: '热云数据04',
+          value: '19858970'
+        },
+        {
+          label: '热云数据05',
+          value: '42853'
+        },
+        {
+          label: '热云数据06',
+          value: '9946'
+        },
+        {
+          label: '热云数据07',
+          value: '42855'
+        },
+        {
+          label: '热云数据08',
+          value: '42856'
+        },
+        {
+          label: '热云数据09',
+          value: '163645'
+        },
+        {
+          label: '热云数据10',
+          value: '163635'
+        },
+        {
+          label: '热云数据11',
+          value: '204824'
+        }
+      ]
+    }
+  },
+}
+</script>

@@ -1,0 +1,70 @@
+<template>
+  <Row>
+    <rd-filter-list-select
+      v-model="selectMultiple"
+      :data="data"
+      :height="200"
+      :width="200"
+      :option-width='200'
+      filterable
+      multiple
+      save-type="leave-save"
+      show-select-option>
+    </rd-filter-list-select>
+
+    <rd-filter-list-select
+      v-model="selectMultiple"
+      style="margin-left:16px"
+      :data="data"
+      :height="200"
+      :width="200"
+      :option-width='200'
+      filterable
+      multiple
+      save-type="leave-save">
+    </rd-filter-list-select>
+  </Row>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        selectMultiple:[],
+        data: [
+          {
+            label: '北京',
+            value: 'beijin'
+          },
+          {
+            label: '上海',
+            value: 'shanghai'
+          },
+          {
+            label: '武汉',
+            value: 'wuhan'
+          },
+          {
+            label: '深圳',
+            value: 'shenzhen'
+          },
+          {
+            label: '广州',
+            value: 'guangzhou'
+          },
+          {
+            label: '大连',
+            value: 'dalian'
+          },
+          {
+            label: '哈尔滨',
+            value: 'haerbin'
+          },
+          {
+            label: '吉林',
+            value: 'jiling'
+          }
+        ]
+      }
+    }
+  }
+</script>

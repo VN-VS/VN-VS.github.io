@@ -1,0 +1,216 @@
+<template>
+  <Row>
+    <rd-filter-list-select
+      v-model="radioSelect1"
+      style="margin: 0 16px 16px 0"
+      :input-width="400"
+      :width="400"
+      :height="200"
+      :data="data1"
+      show-image
+      filterable></rd-filter-list-select>
+
+    <rd-filter-list-select
+      v-model="radioSelect"
+      style="margin: 0 16px 16px 0"
+      :input-width="400"
+      :width="400"
+      :height="200"
+      :data="data"
+      show-image
+      show-description
+      filterable>
+      <div slot="search-operate">
+        <span style="color: #3989faff; cursor: pointer">刷新</span>
+        <span style="margin-right: 10px; color: #3989faff; cursor: pointer">应用管理</span>
+      </div>
+    </rd-filter-list-select>
+
+    <rd-filter-list-select
+      v-model="radioSelect2"
+      style="margin: 0 16px 0 0"
+      :input-width="400"
+      :width="400"
+      :height="200"
+      :data="data"
+      filterable></rd-filter-list-select>
+
+    <rd-filter-list-select
+      v-model="radioSelect"
+      style="margin: 0 16px 0 0"
+      :input-width="400"
+      :width="400"
+      :height="200"
+      :data="data2"
+      show-image
+      show-subtitle
+      show-description
+      filterable>
+      <div slot="search-operate">
+        <span style="color: #3989faff; cursor: pointer">刷新</span>
+        <span style="margin-right: 10px; color: #3989faff; cursor: pointer">应用管理</span>
+      </div>
+    </rd-filter-list-select>
+  </Row>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      radioSelect: 'beijin',
+      radioSelect1: 'beijin',
+      radioSelect2: 'beijin',
+      data: [
+        {
+          label: '北京',
+          value: 'beijin',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png',
+          description: 'beijin-description'
+        },
+        {
+          label: '深圳',
+          value: 'shenzhen',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png',
+          description: 'shenzhen-description'
+        },
+        {
+          label: '广州',
+          value: 'guangzhou',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png',
+          description: 'guangzhou-description'
+        },
+        {
+          label: '大连',
+          value: 'dalian',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png',
+          description: 'dalian-description'
+        },
+        {
+          label: '哈尔滨',
+          value: 'haerbin',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png',
+          description: 'haerbin-daliandescription'
+        },
+        {
+          label: '上海',
+          value: 'shanghai',
+          src: 'https://web.adsdesk.cn/img/myf.b7fd7340.jpeg',
+          description: 'shanghai-description'
+        },
+        {
+          label: '武汉',
+          value: 'wuhan',
+          src: 'https://web.adsdesk.cn/img/cwy.f9398936.png',
+          description: 'wuhan-description'
+        },
+        {
+          label: '吉林',
+          value: 'jiling',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png',
+          description: 'jiling-description'
+        }
+      ],
+      data1: [
+        {
+          label: '北京',
+          value: 'beijin',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png'
+        },
+        {
+          label: '深圳',
+          value: 'shenzhen',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png'
+        },
+        {
+          label: '广州',
+          value: 'guangzhou',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png'
+        },
+        {
+          label: '大连',
+          value: 'dalian',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png'
+        },
+        {
+          label: '哈尔滨',
+          value: 'haerbin',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png'
+        },
+        {
+          label: '上海',
+          value: 'shanghai',
+          src: 'https://web.adsdesk.cn/img/myf.b7fd7340.jpeg'
+        },
+        {
+          label: '武汉',
+          value: 'wuhan',
+          src: 'https://web.adsdesk.cn/img/cwy.f9398936.png'
+        },
+        {
+          label: '吉林',
+          value: 'jiling',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png'
+        }
+      ],
+      data2: [
+        {
+          label: '北京',
+          value: 'beijin',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png',
+          subtitle: '我爱北京天安门',
+          description: '天安门上太阳升'
+        },
+        {
+          label: '深圳',
+          value: 'shenzhen',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png',
+          subtitle: '我爱北京天安门',
+          description: '天安门上太阳升'
+        },
+        {
+          label: '广州',
+          value: 'guangzhou',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png',
+          subtitle: '我爱北京天安门',
+          description: '天安门上太阳升'
+        },
+        {
+          label: '大连',
+          value: 'dalian',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png',
+          subtitle: '我爱北京天安门',
+          description: '天安门上太阳升'
+        },
+        {
+          label: '哈尔滨',
+          value: 'haerbin',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png',
+          subtitle: '我爱北京天安门',
+          description: '天安门上太阳升'
+        },
+        {
+          label: '上海',
+          value: 'shanghai',
+          src: 'https://web.adsdesk.cn/img/myf.b7fd7340.jpeg',
+          subtitle: '我爱北京天安门',
+          description: '天安门上太阳升'
+        },
+        {
+          label: '武汉',
+          value: 'wuhan',
+          src: 'https://web.adsdesk.cn/img/cwy.f9398936.png',
+          subtitle: '我爱北京天安门',
+          description: '天安门上太阳升'
+        },
+        {
+          label: '吉林',
+          value: 'jiling',
+          src: 'https://web.adsdesk.cn/img/lpf.f19b1cfc.png',
+          subtitle: '我爱北京天安门',
+          description: '天安门上太阳升'
+        }
+      ]
+    }
+  }
+}
+</script>

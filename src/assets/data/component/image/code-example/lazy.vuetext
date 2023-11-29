@@ -1,0 +1,87 @@
+<template>
+  <div>
+    <h3>纵向</h3>
+    <div class="demo-image-lazy-vertical">
+      <rd-image
+        v-for="url in verticalUrlList"
+        :key="url"
+        fit="contain"
+        :src="url"
+        lazy />
+    </div>
+    <h3 style="margin-top: 24px">横向</h3>
+    <div class="demo-image-lazy">
+      <div class="demo-image-lazy-inner">
+        <rd-image
+          v-for="url in urlList"
+          :key="url"
+          fit="contain"
+          :width="300"
+          :height="200"
+          :src="url"
+          lazy />
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      url: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg',
+      verticalUrlList: [
+        'https://file.iviewui.com/images/image-demo-1.jpg',
+        'https://file.iviewui.com/images/image-demo-2.jpg',
+        'https://file.iviewui.com/images/image-demo-3.jpg',
+        'https://file.iviewui.com/images/image-demo-4.jpg',
+        'https://file.iviewui.com/images/image-demo-5.jpg',
+        'https://file.iviewui.com/images/image-demo-6.jpg',
+        'https://file.iviewui.com/images/image-demo-7.jpg',
+        'https://file.iviewui.com/images/image-demo-8.jpg',
+        'https://file.iviewui.com/images/image-demo-9.jpg',
+        'https://file.iviewui.com/images/image-demo-10.jpg'
+      ],
+      urlList: [
+        'https://file.iviewui.com/images/image-demo-11.jpg',
+        'https://file.iviewui.com/images/image-demo-12.jpg',
+        'https://file.iviewui.com/images/image-demo-13.jpg',
+        'https://file.iviewui.com/images/image-demo-14.jpg',
+        'https://file.iviewui.com/images/image-demo-15.jpg',
+        'https://file.iviewui.com/images/image-demo-16.jpg',
+        'https://file.iviewui.com/images/image-demo-17.jpg',
+        'https://file.iviewui.com/images/image-demo-18.jpg',
+        'https://file.iviewui.com/images/image-demo-19.jpg',
+        'https://file.iviewui.com/images/image-demo-20.jpg'
+      ]
+    }
+  }
+}
+</script>
+<style lang="less">
+.demo-image-lazy-vertical {
+  width: 800px;
+  height: 400px;
+  overflow-y: auto;
+}
+
+.demo-image-lazy-vertical .rd-image {
+  display: block;
+  min-height: 200px;
+}
+
+.demo-image-lazy {
+  width: 400px;
+  height: 200px;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.demo-image-lazy-inner {
+  width: 3000px;
+  height: 200px;
+}
+
+.demo-image-lazy .rd-image {
+  float: left;
+}
+</style>

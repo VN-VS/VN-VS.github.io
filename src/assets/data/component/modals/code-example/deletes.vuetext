@@ -1,0 +1,40 @@
+<template>
+  <main>
+    <Button @click="onClickDelete1">删除弹框普通</Button>
+  </main>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+       deleteContent: '这是一条正常警告'
+      };
+    },
+    methods: {
+       onClickDelete1() {
+        this.$Modal.confirm({
+            render: h => {
+            return h('rd-delete-modals', {
+                props: {
+                    deleteContent: this.deleteContent
+                },
+                okText: '确定',
+                cancelText: '取消',
+                onOk: () => {
+                this.$Modal.remove()
+                },
+                onCancel: () => {
+                this.$Modal.remove()
+                },
+                on: {
+                    deleteInput: () => {
+                        this.$Modal.remove()
+                    }
+                }
+            })
+            }
+        })
+      }
+    }
+  };
+</script>

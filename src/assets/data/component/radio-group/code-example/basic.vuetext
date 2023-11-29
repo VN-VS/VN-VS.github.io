@@ -1,0 +1,51 @@
+<template>
+  <main>
+    <rd-radio-group v-model="value" :default-list="list" :is-disabled-item-fun="isDisabledItemFun"
+      @on-change="onChange">
+    </rd-radio-group>
+  </main>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        value: 'PRICING_OCPC',
+        list: [
+          {
+            label: '按展示付费(oCPM)',
+            value: 'PRICING_OCPM',
+            tooltip: ['11111111111111', '22222222'],
+            disabled: true
+          },
+          {
+            label: '按点击付费（oCPC）',
+            value: 'PRICING_OCPC'
+          },
+          {
+            label: '按点击付费（CPC）',
+            value: 'PRICING_CPC',
+            tooltip: '11111111111111'
+          },
+          {
+            label: '按展示付费（CPM）',
+            value: 'PRICING_CPM'
+          },
+          {
+            label: '按转化付费（CPA）',
+            value: 'PRICING_CPA',
+            disabled: true,
+            disabledTooltip: '11111'
+          }
+        ]
+      }
+    },
+    methods: {
+      isDisabledItemFun(e) {
+        return e.value === 'PRICING_CPA'
+      },
+      onChange(e) {
+        console.log(e)
+      }
+    }
+  }
+</script>

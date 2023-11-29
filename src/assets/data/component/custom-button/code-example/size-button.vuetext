@@ -1,0 +1,129 @@
+<template>
+  <div>
+    <rd-radio-group
+      v-model="value"
+      style="margin-bottom: 20px"
+      :default-list="list"></rd-radio-group>
+    <template v-if="value === 'big'">
+      <div class="demo-f-l">
+        <rd-button
+          type="icon"
+          icon="ry-icon-lieb"></rd-button>
+        <rd-button
+          type="icon"
+          is-selected
+          icon="ry-icon-qust"></rd-button>
+        <div>趋势图表</div>
+      </div>
+      <div class="demo-f-l">
+        <rd-button
+          type="icon"
+          icon="ry-icon-lieb"></rd-button>
+        <rd-button
+          type="icon"
+          is-selected
+          icon="ry-icon-bingt"></rd-button>
+        <div>饼状图表</div>
+      </div>
+      <div class="demo-f-l">
+        <rd-button
+          type="icon"
+          icon="ry-icon-lieb"></rd-button>
+        <rd-button
+          type="icon"
+          is-selected
+          icon="ry-icon-zhuzt"></rd-button>
+        <div>柱状图表</div>
+      </div>
+
+      <div class="demo-f-l">
+        <rd-button
+          type="icon"
+          icon="ry-icon-lieb"></rd-button>
+        <rd-button
+          type="icon"
+          is-selected
+          icon="ry-icon-tulie"></rd-button>
+        <div>图片图表</div>
+      </div>
+    </template>
+    <template v-if="value === 'small'">
+      <div class="demo-f-l">
+        <rd-button
+          icon-size="small"
+          type="icon"
+          icon="ry-icon-lieb"></rd-button>
+        <rd-button
+          icon-size="small"
+          type="icon"
+          is-selected
+          icon="ry-icon-qust"></rd-button>
+        <div>趋势图表</div>
+      </div>
+      <div class="demo-f-l">
+        <rd-button
+          icon-size="small"
+          type="icon"
+          icon="ry-icon-lieb"></rd-button>
+        <rd-button
+          icon-size="small"
+          type="icon"
+          is-selected
+          icon="ry-icon-bingt"></rd-button>
+        <div>饼状图表</div>
+      </div>
+      <div class="demo-f-l">
+        <rd-button
+          icon-size="small"
+          type="icon"
+          icon="ry-icon-lieb"></rd-button>
+        <rd-button
+          icon-size="small"
+          type="icon"
+          is-selected
+          icon="ry-icon-zhuzt"></rd-button>
+        <div>柱状图表</div>
+      </div>
+
+      <div class="demo-f-l">
+        <rd-button
+          icon-size="small"
+          type="icon"
+          icon="ry-icon-lieb"></rd-button>
+        <rd-button
+          icon-size="small"
+          type="icon"
+          is-selected
+          icon="ry-icon-tulie"></rd-button>
+        <div>图片图表</div>
+      </div>
+    </template>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      value: 'big',
+      list: [
+        {
+          label: '大尺寸',
+          value: 'big'
+        },
+        {
+          label: '小尺寸',
+          value: 'small'
+        }
+      ]
+    }
+  }
+}
+</script>
+<style scoped>
+.demo-f-l {
+  float: left;
+  text-align: center;
+  margin: 0 40px 40px 0;
+}
+</style>

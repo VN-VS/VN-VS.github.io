@@ -1,0 +1,15 @@
+<template>
+    <main>
+    <rd-word-limit
+      :is-input-slot="false"
+      :current-len="5"
+      :max-len="10"></rd-word-limit>
+    </main>
+  </template>
+  <script>
+  export default {
+    data() {
+      return {}
+    }
+  };
+  </script>

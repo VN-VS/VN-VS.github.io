@@ -1,0 +1,7 @@
+<template>
+ <rd-empty></rd-empty>
+</template>
+
+<script>
+export default {}
+</script>

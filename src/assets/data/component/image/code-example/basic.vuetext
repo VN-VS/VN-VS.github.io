@@ -1,0 +1,26 @@
+<template>
+  <Row class='text-center'>
+    <Col
+      v-for="fit in fitList"
+      :key="fit"
+      flex="1">
+      <rd-image
+        :src="url"
+        :fit="fit"
+        width="100px"
+        height="100px"
+        :alt="fit" />
+      <div>{{ fit }}</div>
+    </Col>
+  </Row>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      fitList: ['fill', 'contain', 'cover', 'none', 'scale-down'],
+      url: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+    }
+  }
+}
+</script>

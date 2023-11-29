@@ -1,0 +1,60 @@
+<template>
+    <main>
+        <rd-batch-upload-xls
+          ref="upDataFiles"
+          v-model="isSucceedType"
+          :action="action"
+          :accept="accept"
+          :type="type"
+          :hint-text="hintText"
+          :error-table="errorTable"
+          :columns-header="columnsHeader"
+          :on-error="handleError"
+          @tautology="clearData"
+          @clearFile="clearFile"></rd-batch-upload-xls>
+    </main>
+  </template>
+  
+  <script>
+  export default {
+    data() {
+      return {
+        action: '',
+        accept: '.xls',
+        type: 'drag',
+        hintText: '',
+        isSucceedType: 'none',
+        errorTable: [],
+        columnsHeader: [
+          {
+            title: '错误原因',
+            key: 'title',
+            width: 200
+          },
+          {
+            title: '错误所在行数',
+            key: 'content'
+          }
+        ]
+      }
+    },
+    methods: {
+      handleError() {
+        this.resetData()
+      },
+      clearFile() {
+        this.clearData()
+      },
+      clearData() {
+        this.isSucceedType = 'none'
+        this.hintText = ''
+        this.errorTable = []
+      },
+      resetData() {
+        this.isSucceedType = 'succeed'
+        this.errorTable = []
+        this.hintText = '上传成功'
+      }
+    }
+  }
+  </script>

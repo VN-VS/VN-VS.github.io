@@ -1,0 +1,27 @@
+<template>
+  <Button
+    v-if="show"
+    v-tooltip="{disabled,placement: 'top', content: 'text prompts is can disabled' }"
+    @click="click">
+    click disable text prompts
+  </Button>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        show: true,
+        disabled: false
+      }
+    },
+    methods: {
+      click() {
+        this.disabled = true
+        this.show = false
+        setTimeout(() => {
+          this.show = true
+        }, 20)
+      }
+    }
+  }
+</script>

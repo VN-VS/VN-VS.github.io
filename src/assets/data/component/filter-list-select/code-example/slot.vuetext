@@ -1,0 +1,114 @@
+<template>
+  <Row>
+    <rd-filter-list-select
+      v-model="radioSelect"
+      label="搜索操作slot :"
+      :input-width="400"
+      :width="400"
+      :data="data"
+      filterable
+      style="margin:0 26px 16px 0">
+      <div slot="search-operate">
+        <span style="color: #3989faff; cursor: pointer">刷新</span>
+        <span style="margin-right: 10px; color: #3989faff; cursor: pointer">应用管理</span>
+      </div>
+    </rd-filter-list-select>
+
+    <rd-filter-list-select
+      v-model="radioSelect"
+      style="margin:0 26px 16px 0"
+      label="自定义列slot :"
+      :input-width="400"
+      :width="400"
+      :data="data"
+      filterable>
+      <div
+        slot="select-item"
+        slot-scope="{ row, index }"
+        style="line-height: 40px; padding: 0 10px">
+        自定义列slot
+        <span style="margin: 0 24px">row.label:{{ row.label }}</span>
+        index:{{ index }}
+      </div>
+    </rd-filter-list-select>
+
+    <rd-filter-list-select
+      v-model="radioSelect"
+      style="margin:0 26px 16px 0"
+      label="自定义底部slot :"
+      :input-width="400"
+      :width="400"
+      :data="data"
+      filterable>
+      <div slot="footer" style='padding:8px'>
+        自定义底部slot
+        <Button 
+          size='small'
+          type="primary" 
+          @click='handleClick'>
+          点击
+        </Button>
+      </div> 
+    </rd-filter-list-select>
+
+    <rd-filter-list-select
+      v-model="radioSelect"
+      style="margin:0 26px 16px 0"
+      :input-width="400"
+      :width="400"
+      :data="data"
+      >
+      <div slot="input-label">
+        <Icon type="logo-twitter" />
+      </div> 
+    </rd-filter-list-select>
+  </Row>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      radioSelect: '',
+      data: [
+        {
+          label: '北京',
+          value: 'beijin'
+        },
+        {
+          label: '上海',
+          value: 'shanghai'
+        },
+        {
+          label: '武汉',
+          value: 'wuhan'
+        },
+        {
+          label: '深圳',
+          value: 'shenzhen'
+        },
+        {
+          label: '广州',
+          value: 'guangzhou'
+        },
+        {
+          label: '大连',
+          value: 'dalian'
+        },
+        {
+          label: '哈尔滨',
+          value: 'haerbin'
+        },
+        {
+          label: '吉林',
+          value: 'jiling'
+        }
+      ]
+    }
+  },
+  methods:{
+    handleClick(){
+      this.$Message.info('自定义底部slot')
+    }
+  }
+}
+</script>

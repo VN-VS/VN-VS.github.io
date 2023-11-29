@@ -1,0 +1,73 @@
+<template>
+  <main>
+    <rd-account-select 
+      v-model="data" 
+      :data="accountList"
+      multiple>
+    </rd-account-select>
+    <rd-prefix-container style="margin-top:16px">
+      <span slot="prepend">投放账户</span>
+      <rd-account-select
+        v-model="data"
+        :data="accountList"
+        style='width:400px' 
+        multiple>
+      </rd-account-select>
+    </rd-prefix-container>
+  </main>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        data: ['204822'],
+        accountList: [
+          {
+            label: '热云数据01',
+            value: '204822'
+          },
+          {
+            label: '热云数据02',
+            value: '19858972'
+          },
+          {
+            label: '热云数据03',
+            value: '19858973'
+          },
+          {
+            label: '热云数据04',
+            value: '19858970'
+          },
+          {
+            label: '热云数据05',
+            value: '42853'
+          },
+          {
+            label: '热云数据06',
+            value: '9946'
+          },
+          {
+            label: '热云数据07',
+            value: '42855'
+          },
+          {
+            label: '热云数据08',
+            value: '42856'
+          },
+          {
+            label: '热云数据09',
+            value: '163645'
+          },
+          {
+            label: '热云数据10',
+            value: '163635'
+          },
+          {
+            label: '热云数据11',
+            value: '204824'
+          }
+        ],
+      }
+    }
+  }
+</script>

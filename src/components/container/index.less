@@ -1,0 +1,17 @@
+.doc-box {
+  display: flex;
+  width: 100%;
+  padding: 6px 24px;
+  &-content {
+    width: calc(~'100% - 172px - 12px');
+  }
+  &-anchor {
+    width: 172px;
+    position: fixed;
+    right: 12px;
+    z-index: 1;
+    /deep/.ivu-affix {
+      left: inherit !important;
+    }
+  }
+}

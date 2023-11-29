@@ -1,0 +1,58 @@
+<template>
+  <div>
+    <rd-layout-module-config :slot-list="slotList" :item-min-width="200" :height="477" width-type="customScale"
+      :clo-width-list="cloWidthList">
+      <template #land>
+        <rd-layout-module-view title="落地页">
+          <div slot="header">
+            <a>配置</a>
+          </div>
+          <div slot="main" style="background: #e1fae8; height: 500px">落地页面板内容</div>
+        </rd-layout-module-view>
+      </template>
+      <template #convert>
+        <rd-layout-module-view title="转化">
+          <div slot="header">
+            <a>配置</a>
+          </div>
+          <div slot="main" style="background: #e1fae8; height: 500px">转化面板内容</div>
+        </rd-layout-module-view>
+      </template>
+      <template #event>
+        <rd-layout-module-view title="事件资产">
+          <div slot="header">
+            <a>配置</a>
+          </div>
+          <div slot="main" style="background: #e1fae8; height: 500px">事件资产面板内容</div>
+        </rd-layout-module-view>
+      </template>
+      <template #creative>
+        <rd-layout-module-view title="创意" showFooter>
+          <div slot="header">
+            <a>清空</a>
+          </div>
+          <div slot="main" style="background: #e1fae8; height: 500px">创意面板内容</div>
+          <div slot="footer" style="
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+            ">
+            <a>选择素材</a>
+          </div>
+        </rd-layout-module-view>
+      </template>
+    </rd-layout-module-config>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        slotList: [['land'], ['convert', 'event'], ['creative']],
+        cloWidthList: [30, 40, 30]
+      }
+    }
+  }
+</script>

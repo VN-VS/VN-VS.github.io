@@ -1,0 +1,57 @@
+<template>
+  <div>
+    <rd-echo-container @on-clear="clear">
+      <span slot="label">
+        插槽
+        <Icon
+          custom="iconfont ry-icon-suo"
+          color="#555666"></Icon>
+        :
+      </span>
+      <div
+        slot="content"
+        class="echo-date-box">
+        <rd-date-picker
+          v-model="time"
+          class="echo-date"
+          width="180px"
+          :clearable="false"></rd-date-picker>
+        <Divider
+          type="vertical"
+          class="rd-echo-container-content-box-vertical-line" />
+      </div>
+    </rd-echo-container>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      time: []
+    }
+  },
+  methods: {
+    clear() {
+      this.time = []
+    }
+  }
+}
+</script>
+<style lang="less" scoped>
+.echo-date-box {
+  display: flex;
+  align-items: center;
+}
+.echo-date .ivu-input {
+  border: none;
+  background: inherit;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.echo-date-box .ivu-divider, .echo-date-box .ivu-divider-vertical {
+    margin: 0 8px 0 0;
+}
+.rd-echo-container :hover .ivu-select-dropdown {
+  color: initial;
+}
+</style>

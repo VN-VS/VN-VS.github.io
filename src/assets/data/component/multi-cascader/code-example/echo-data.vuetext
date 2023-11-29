@@ -1,0 +1,106 @@
+<template>
+  <div style="width: 400px;display:flex;align-items: center;">
+    <rd-multi-cascader style="width: 300px" v-model="list" :data="data1" clearable :echoLabel="labels"
+      @getLables="getLables" :showEmptyWrapByNotSynced="false">
+    </rd-multi-cascader>
+    <Button @click="echo" style="margin-left: 10px;">回显数据</Button>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        echoVal: ['zhinan-shejiyuanze', 'zhinan-daohang'],
+        echoLab: ['指南-设计原则', '指南-导航'],
+        list: [],
+        labels: [],
+        data1: [
+          {
+            showCheck: true,
+            value: 'zhinan',
+            label: '指南',
+            children: [
+              {
+                showCheck: true,
+                value: 'shejiyuanze',
+                label: '设计原则',
+                tooltip: '设计原则tooltip设计原则tooltip设计原则tooltip',
+                children: [
+                  {
+                    tooltip: '设计原则-一致tooltip设计原则-一致tooltip',
+                    value: 'yizhi',
+                    label: '一致'
+                  },
+                  {
+                    value: 'fankui',
+                    label: '反馈'
+                  },
+                  {
+                    value: 'xiaolv',
+                    label: '效率'
+                  },
+                  {
+                    value: 'kekong',
+                    label: '可控'
+                  }
+                ]
+              },
+              {
+                value: 'daohang',
+                label: '导航',
+                children: [
+                  {
+                    value: 'cexiangdaohang',
+                    label: '侧向导航'
+                  },
+                  {
+                    value: 'dingbudaohang',
+                    label: '顶部导航'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            value: 'ziyuan',
+            label: '资源',
+            children: [
+              {
+                value: 'axure',
+                label: 'Axure Components'
+              },
+              {
+                value: 'sketch',
+                label: 'Sketch Templates'
+              },
+              {
+                value: 'jiaohu',
+                label: '组件交互文档'
+              }
+            ]
+          }
+        ],
+        data: [
+          {
+            showCheck: true,
+            value: 'zhinan',
+            label: '指南'
+          },
+          {
+            value: 'ziyuan',
+            label: '资源'
+          }
+        ]
+      }
+    },
+    methods: {
+      getLables(lbs) {
+        this.labels = lbs
+      },
+      echo() {
+        this.list = JSON.parse(JSON.stringify(this.echoVal))
+        this.labels = JSON.parse(JSON.stringify(this.echoLab))
+      }
+    }
+  }
+</script>

@@ -1,0 +1,28 @@
+<template>
+  <main>
+    <div>
+      <span>自定义内容。不显示尾部按钮</span>
+      <rd-edit-row-bid type="custom" :showFooter="false" title="自定义">
+        <template #iconType>
+          <a>+</a>
+        </template>
+        <template #title>
+          自定义插槽标题
+        </template>
+        <template #custom>
+          <span>输入自定义内容</span>
+          <input type="text" v-model="customText">
+        </template>
+      </rd-edit-row-bid>
+    </div>
+  </main>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        customText: ''
+      };
+    }
+  };
+</script>

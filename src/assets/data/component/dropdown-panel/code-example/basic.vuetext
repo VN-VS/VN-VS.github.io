@@ -1,0 +1,27 @@
+<template>
+  <div>
+    <rd-dropdown-panel
+      type="list"
+      :data="listData"></rd-dropdown-panel>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      listData: [
+        { label: '驴打滚', value: 'value1'},
+        { label: '炸酱面', value: 'value2'},
+        { label: '豆汁儿', value: 'value3', disabled: true, tooltip: '豆汁儿好喝吗' },
+        { label: '冰糖葫芦', value: 'value4', tooltip: '豆汁儿配冰糖葫芦' },
+        { label: '北京烤鸭', value: 'value5'},
+        {
+          label: '这是一个超长的名称这是一个超长的名称这是一个超长的名称这是一个超长的名称',
+          value: 'value6'
+        }
+      ]
+    }
+  }
+}
+</script>

@@ -1,7 +1,7 @@
 export default {
-  data() {
-    return {
-      classNames: "TDD-header"
-    };
-  }
-};
+    data() {
+        return {
+            classNames: 'TDD-header'
+        }
+    }
+}

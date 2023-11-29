@@ -1,0 +1,6 @@
+<template>
+  <span v-tooltip="{content:'Here is the prompt text'}">A balloon appears when the mouse passes over this text</span>
+</template>
+<script>
+  export default {}
+</script>

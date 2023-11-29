@@ -1,0 +1,220 @@
+<template>
+  <main>
+    <rd-account-select v-model="dataGroup"  multiple grouping :data="accountListGroup" cross-subject></rd-account-select>
+  </main>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        dataGroup: ['204813'],
+        accountListGroup: [
+          {
+            label: '热云数据01',
+            disabled: false,
+            children: [
+              {
+                label: '直播推广',
+                value: '204813'
+              }
+            ]
+          },
+          {
+            label: '热云数据02',
+            disabled: false,
+            children: [
+              {
+                label: '乐凡互娱01',
+                value: '163635'
+              }
+            ]
+          },
+          {
+            label: '热云数据03',
+            disabled: false,
+            children: [
+              {
+                label: '广州四三九九01',
+                value: '42855'
+              },
+              {
+                label: '广州四三九九02',
+                value: '42856'
+              }
+            ]
+          },
+          {
+            label: '热云数据04',
+            disabled: false,
+            children: [
+              {
+                label: '客户账号，勿动',
+                value: '163642'
+              }
+            ]
+          },
+          {
+            label: '热云数据05',
+            disabled: false,
+            children: [
+              {
+                label: '游戏礼包测试',
+                value: '204823'
+              }
+            ]
+          },
+          {
+            label: '热云数据06',
+            disabled: false,
+            children: [
+              {
+                label: '淘宝01',
+                value: '204824'
+              }
+            ]
+          },
+          {
+            label: '热云数据07',
+            disabled: false,
+            children: [
+              {
+                label: '游戏礼包测试-1',
+                value: '19783808'
+              }
+            ]
+          },
+          {
+            label: '热云数据08',
+            disabled: false,
+            children: [
+              {
+                label: '礼包码专用-其他勿动',
+                value: '19858964'
+              }
+            ]
+          },
+          {
+            label: '热云数据09',
+            disabled: false,
+            children: [
+              {
+                label: '快应用账户',
+                value: '204811'
+              }
+            ]
+          },
+          {
+            label: '热云数据10',
+            disabled: false,
+            children: [
+              {
+                label: '北京米花01',
+                value: '42853'
+              }
+            ]
+          },
+          {
+            label: '热云数据11',
+            disabled: false,
+            children: [
+              {
+                label: '热云-1',
+                value: '1154'
+              },
+              {
+                label: '热云-2',
+                value: '1155'
+              },
+              {
+                label: '热云-3',
+                value: '1153'
+              }
+            ]
+          },
+          {
+            label: '热云数据12',
+            disabled: false,
+            children: [
+              {
+                label: '名药汇医01',
+                value: '163645'
+              }
+            ]
+          },
+          {
+            label: '汕头市添翼互娱网络科技有限公司',
+            disabled: false,
+            children: [
+              {
+                label: '汕头市添翼01',
+                value: '1104'
+              }
+            ]
+          },
+          {
+            label: '热云数据13',
+            disabled: false,
+            children: [
+              {
+                label: '球球-A1',
+                value: '1157'
+              }
+            ]
+          },
+          {
+            label: '热云数据14',
+            disabled: false,
+            children: [
+              {
+                label: '预约测试账号',
+                value: '204814'
+              },
+              {
+                label: '预约测试账号2',
+                value: '19783809'
+              }
+            ]
+          },
+          {
+            label: '热云数据15',
+            disabled: false,
+            children: [
+              {
+                label: '精灵02',
+                value: '19858972'
+              },
+              {
+                label: '精灵03',
+                value: '19858222'
+              },
+              {
+                label: '精灵04',
+                value: '19858970'
+              }
+            ]
+          },
+          {
+            label: '热云数据16',
+            disabled: false,
+            children: [
+              {
+                label: '欣网01',
+                value: '204822'
+              }
+            ]
+          },
+          {
+            label: '热云数据17',
+            disabled: false,
+            children: [
+              {
+                label: '掌沃06',
+                value: '9946'
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+</script>

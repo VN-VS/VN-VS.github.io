@@ -1,0 +1,54 @@
+<template>
+  <Row
+    class="demo-image-error text-center"
+    :gutter="24">
+    <Col flex="1">
+      <rd-image
+        :key="imageKey"
+        width="216px"
+        height="120px"
+        fit="contain"
+        style="margin-right: 24px"
+        src="https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg"></rd-image>
+      <div>默认</div>
+    </Col>
+    <Col flex="1">
+      <rd-image
+        :key="imageKey"
+        width="216px"
+        height="120px"
+        fit="contain"
+        src="https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg">
+        <template #placeholder>加载中(slot)</template>
+      </rd-image>
+      <div>
+        自定义
+        <Button
+          size="small"
+          style="margin-right: 24px"
+          @click="placeholderChange">
+          Reload
+        </Button>
+      </div>
+    </Col>
+  </Row>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      imageKey: 0
+    }
+  },
+  methods: {
+    placeholderChange() {
+      this.imageKey = Math.random()
+    }
+  }
+}
+</script>
+<style lang="less" scoped>
+.demo-image-error .rd-image {
+  background: #f8f8f9;
+}
+</style>

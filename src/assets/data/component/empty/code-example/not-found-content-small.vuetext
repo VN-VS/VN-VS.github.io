@@ -1,0 +1,9 @@
+<template>
+    <rd-empty
+      size="small"
+      not-found-image="simpleImage"></rd-empty>
+</template>
+
+<script>
+export default {}
+</script>

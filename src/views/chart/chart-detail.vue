@@ -1,9 +1,9 @@
 <template>
-  <div>chartDetail</div>
+    <div>chartDetail</div>
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style lang="less" scoped></style>

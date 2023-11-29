@@ -1,0 +1,52 @@
+<template>
+  <main>
+    <div>
+      <span>输入数字</span>
+      <rd-edit-row-bid type="number" :precision="2" :numberMin="5" :numberMax="90" :numberStep="1" :value="num"
+        title="输入数字" :confirmFunc="confirmNum"></rd-edit-row-bid>
+      <br />
+      <br />
+      <span>输入数字自定义校验</span>
+      <rd-edit-row-bid type="number" :numberStep="1" :value="num" title="输入数字自定义校验" :rules="rulesNum"
+        :confirmFunc="confirmNum"></rd-edit-row-bid>
+    </div>
+  </main>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        num: 30,
+        rulesNum: [
+          {
+            validator: (rule, value, callback) => {
+              return new Promise((resolve, reject) => {
+                if (value > 100) {
+                  reject(new Error('不能大于100'))
+                  return
+                }
+                if (value < 1) {
+                  reject(new Error('不能小于1'))
+                  return
+                }
+                resolve()
+              })
+            }
+          }
+        ],
+      };
+    },
+    methods: {
+      confirmNum(num) {
+        return new Promise((resolve, reject) => {
+          if (typeof num === 'number') {
+            this.num = num
+            resolve()
+            return
+          }
+          reject()
+        })
+      }
+    }
+  };
+</script>

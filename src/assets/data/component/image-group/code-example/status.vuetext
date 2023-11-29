@@ -1,0 +1,119 @@
+<template>
+  <div class="demo-text-center">
+    <div>
+      <rd-image-group
+        style="margin: 16px 24px 10px 0"
+        :size="1"
+        :data="dataError"
+        type="video"
+        width="216px"
+        height="120px" />
+      加载失败
+    </div>
+    <div>
+      <rd-image-group
+        style="margin: 16px 24px 10px 0"
+        :size="1"
+        :selected="selectValue === 'open'"
+        :data="data"
+        width="216px"
+        height="120px"
+        @click.native='selectValueChange' />
+      选中
+      <Button
+        size="small"
+        @click="selectValueChange">
+        切换
+      </Button>
+    </div>
+    <div>
+      <rd-image-group
+        style="margin: 16px 24px 10px 0"
+        :size="1"
+        :data="data"
+        type="video"
+        video-sign
+        width="216px"
+        height="120px" />
+      左下视频角标
+    </div>
+    <div>
+      <rd-image-group
+        style="margin: 16px 24px 10px 0"
+        :size="2"
+        :data="data"
+        show-delete
+        width="216px"
+        height="120px"
+        @on-delete="onDelete" />
+      删除
+    </div>
+    <div>
+      <rd-image-group
+        style="margin: 16px 24px 10px 0"
+        :size="6"
+        :data="data"
+        preview-group-tip
+        width="216px"
+        height="120px"
+        @on-preview-group-click="onPreviewGroupClick" />
+      整体预览
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      selectValue: 'open',
+      data: [
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+        }
+      ],
+      dataError: [
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small-error.jpg'
+        }
+      ]
+    }
+  },
+  methods: {
+    onDelete() {
+      this.$Message.info('delete')
+    },
+    selectValueChange() {
+      this.selectValue = this.selectValue === 'open' ? 'close' : 'open'
+    },
+    onDelete() {
+      this.$Message.info('删除')
+    },
+    onPreviewGroupClick() {
+      this.$Message.info('on-preview-group-click')
+    }
+  }
+}
+</script>
+<style>
+.demo-text-center {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  text-align: center;
+}
+</style>

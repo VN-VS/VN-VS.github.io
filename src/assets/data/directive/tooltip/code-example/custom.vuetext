@@ -1,0 +1,17 @@
+<template>
+  <Button v-tooltip="{placement: 'top', contentRender}">Multiple lines</Button>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        contentRender: (h, option) => {
+          return h('div', [
+            h('p', 'Display multiple lines of information'),
+            h('p', [h('i', 'Display multiple lines of information')])
+          ])
+        }
+      }
+    }
+  }
+</script>

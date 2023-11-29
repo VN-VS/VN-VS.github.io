@@ -1,0 +1,82 @@
+<template>
+  <Row>
+    <rd-filter-list-select
+      v-model="selectMultiple"
+      :data="data"
+      :height="200"
+      :width="200"
+      filterable
+      :group-name-list="groupNameList"
+      multiple
+      show-select-option>
+    </rd-filter-list-select>
+
+    <rd-filter-list-select
+      v-model="selectMultiple"
+      label="分组 :"
+      style="margin-left:16px"
+      :data="data"
+      :height="200"
+      :width="200"
+      :group-name-list="groupNameList"
+      multiple>
+    </rd-filter-list-select>
+  </Row>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        selectMultiple:[],
+        groupList: [
+          {
+            label: 'Hot Cities',
+            children: [
+                {
+                    value: 'New York',
+                    label: 'New York'
+                },
+                {
+                    value: 'London',
+                    label: 'London'
+                },
+                {
+                    value: 'Sydney',
+                    label: 'Sydney'
+                }
+            ]
+          },
+          {
+            label: 'Other Cities',
+            children: [
+              {
+                  value: 'Ottawa',
+                  label: 'Ottawa'
+              },
+              {
+                  value: 'Paris',
+                  label: 'Paris'
+              }
+            ]
+          }
+        ]
+      }
+    },
+    computed: {
+      groupNameList() {
+        let params = {}
+        this.groupList.forEach(item => {
+          const key = item.children[0].value
+          params[key] = item.label
+        })
+        return params
+      },
+      data() {
+        return this.groupList.reduce((list,val)=>{
+            list = [...list, ...val.children]
+            return list
+        },[])
+      }
+    }
+  }
+</script>

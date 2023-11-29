@@ -1,0 +1,38 @@
+<template>
+  <div>
+    <b>无序列单条信息</b>
+    <rd-digital-details-tooltip
+      type="list"
+      :data="data"></rd-digital-details-tooltip>
+    <br />
+    <br />
+    <b>自定义展示图标</b>
+    <rd-digital-details-tooltip
+      type="list"
+      :data="data">
+      <span style="font-size: 12px; color: #3989fa">详情内容</span>
+    </rd-digital-details-tooltip>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        data: [
+          {
+            showOrder: false,
+            showTitle: false,
+            title: '',
+            children: [
+              // 标题
+              {
+                title:
+                  'Steven Paul Jobs was an American entrepreneur and business magnate. He was the chairman, chief executive officer, and a co-founder of Apple Inc.'
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+</script>

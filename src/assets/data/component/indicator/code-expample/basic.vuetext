@@ -1,0 +1,51 @@
+<template>
+  <div>
+    <rd-indicator
+        v-model="value"
+        :unit="unit"
+        :indicator-rule="indicatorRule"
+        :min="10"
+        :max="1000" />
+   </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      value: {},
+      unit: '%',
+      indicatorRule: [
+        {
+          value: '=',
+          label: '等于'
+        },
+        {
+          value: '!=',
+          label: '不等于'
+        },
+        {
+          value: '<',
+          label: '小于'
+        },
+        {
+          value: '>',
+          label: '大于'
+        },
+        {
+          value: '>=',
+          label: '大于等于'
+        },
+        {
+          value: '<=',
+          label: '小于等于'
+        },
+        {
+          value: 'BETWEEN',
+          label: '介于',
+          ruleType: 'number-input-between'
+        }
+      ]
+    }
+  }
+}
+</script>

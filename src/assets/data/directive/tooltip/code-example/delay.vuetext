@@ -1,0 +1,8 @@
+<template>
+  <Button v-tooltip="{placement: 'top', content: 'Tooltip text', delay: 1000}">
+    Delay 1 second to show
+  </Button>
+</template>
+<script>
+  export default {}
+</script>

@@ -1,40 +1,52 @@
 <template>
-  <div :class="['layout-head clearfix', { 'layout-head-index': isHome }]">
-    <div class="top-left">
-      <div class="layout-logo">
-        <router-link to="/home">
-          <!-- <img src="../../assets/img/logo.png" alt style="height:32px" /> -->
-          RY Design
-        </router-link>
-      </div>
-    </div>
-    <div class="top-right">
-      <div class="fl" style="width: calc(100% - 520px);padding-top: 20px;">
+    <div :class="['layout-head clearfix', { 'layout-head-index': isHome }]">
+        <div class="top-left">
+            <div class="layout-logo">
+                <router-link to="/home">
+                    <!-- <img src="../../assets/img/logo.png" alt style="height:32px" /> -->
+                    RY Design
+                </router-link>
+            </div>
+        </div>
+        <div class="top-right">
+            <!-- <div
+        class="fl"
+        style="width: calc(100% - 520px); padding-top: 20px">
         <overallSearch></overallSearch>
-      </div>
+      </div> -->
 
-      <div class="layout-nav">
-        <!-- 导航 -->
-        <nav class="fr">
-          <Menu mode="horizontal" :active-name="activeName" ref="topmenu">
-            <template v-for="(val, index) in data">
-              <MenuItem :name="val.id" :key="index" :to="isChild(index)">
-                <!-- <Icon
+            <div class="layout-nav">
+                <!-- 导航 -->
+                <nav class="fr">
+                    <Menu
+                        ref="topmenu"
+                        mode="horizontal"
+                        :active-name="activeName">
+                        <template v-for="(val, index) in data">
+                            <MenuItem
+                                :key="index"
+                                :name="val.id"
+                                :to="isChild(index)">
+                                <!-- <Icon
                 :class="val.iviewIcon === false ? 'icon-' + val.icon : ''"
                 :type="val.icon"
                 ></Icon>-->
-                {{ val.name }}
-              </MenuItem>
-            </template>
-          </Menu>
-        </nav>
-        <!-- 搜索组件 -->
-        <!-- <div class="layout-nav-search fl">
+                                {{ val.name }}
+                            </MenuItem>
+                        </template>
+                        <a class="ivu-menu-item" href="/docs/" target="_blank">
+                            开发者中心
+                        </a>
+                    </Menu>
+                </nav>
+
+                <!-- 搜索组件 -->
+                <!-- <div class="layout-nav-search fl">
           <overallSearch></overallSearch>
         </div>-->
-      </div>
-      <!-- 内部操作 -->
-      <!-- <div class="layout-dropdown">
+            </div>
+            <!-- 内部操作 -->
+            <!-- <div class="layout-dropdown">
         <Dropdown class="drp" trigger="click" placement="bottom-end" @on-click="operation">
           <Icon custom="i-td i-td-account_circle_px" />
           <DropdownMenu slot="list">
@@ -127,161 +139,76 @@
           </DropdownMenu>
         </Dropdown>
       </div> -->
+        </div>
     </div>
-  </div>
 </template>
 <script>
-import menu from "@/assets/config/menu.js";
-import filterPath from "./setpath";
-import overallSearch from "./overall-search.vue";
-import { ajax } from "@/util/ajax";
-import { mapActions } from "vuex";
+import menu from '@/assets/config/menu.js'
+// import overallSearch from './overall-search.vue'
+import { mapActions } from 'vuex'
+import { getTopByPath, getNavInfo } from '@/util/util.js'
 export default {
-  components: {
-    overallSearch
-  },
-  inject: ["app"],
-  props: {
-    isHome: {
-      type: Boolean,
-      default: false
-    }
-  },
-  data() {
-    return {
-      data: JSON.parse(JSON.stringify(menu.child)),
-      activeName: 3,
-      acitveCityName: ""
-    };
-  },
-  watch: {
-    $route(to, from) {
-      if (to.name === from.name) return;
-      //set top menu actived
-      let topName;
-      if (!to.params.dtype) {
-        topName = to.name;
-      } else {
-        topName = to.params.dtype;
-      }
-      const sta = filterPath.setPath(to.params.id, this.data, topName);
-      this.activeName = sta.firstCurrent;
-      // 其它布局不需要分发菜单数据
-      if (!to.meta.uncommon) return;
-      // this.$nextTick(() => {
-      // this.$bus.$emit("top-getData-end", this.data);
-      this.$bus.$emit("on-top-menu-change", true);
-      // const key = this.data.filter(item => item.path === to.name)[0].id;
-      // this.$bus.$emit("menu-change", key);
-      // });
-    }
-  },
-  mounted() {
-    // // let list = ["components"];
-    // let name = this.$router.currentRoute.name;
-    // this.getTabularData().then(() => {
-    //   // this.$bus.$emit("top-getData-end", this.data);
-    //   this.setMenuData(this.data);
-    //   this.init();
-    // });
-    this.setMenuData(this.data);
-      this.init();
-  },
-  methods: {
-    ...mapActions(["setMenuData"]),
-    getTabularData() {
-      return new Promise(resolve => {
-        ajax({
-          urlKey: "/api/component",
-          methods: "POST"
-        }).then(res => {
-          if (res.status === 1) {
-            this.setData(res.data);
-            resolve();
-          } else {
-            resolve([]);
-          }
-        });
-      });
+    components: {
+        // overallSearch
     },
-    setData(data) {
-      let name = "components";
-      let idx = -1;
-      this.data.some((item, index) => {
-        if (item.path === name) {
-          idx = index;
+    props: {
+        isHome: {
+            type: Boolean,
+            default: false
         }
-      });
-
-      if (idx < 0) return;
-
-      let list = data.map(item => {
+    },
+    data() {
         return {
-          id: item.id,
-          name: item.label,
-          englishName: item.text,
-          href: item.text,
-          child: []
-        };
-      });
-      // 设置组件菜单
-      this.data[idx].child[1].child = list;
-    },
-    init() {
-      const pathName = this.$router.currentRoute.params.id;
-      let fname;
-      if (!this.$route.params.dtype) {
-        fname = this.$route.name;
-      } else {
-        fname = this.$route.params.dtype;
-      }
-      let index,
-        meta = this.$route.meta;
-      if (meta.index) {
-        index = 0;
-      } else {
-        const temppath = filterPath.setPath(pathName, this.data, fname);
-        index = temppath.firstCurrent;
-      }
-
-      this.activeName = index;
-      this.$nextTick(() => {
-        this.$refs.topmenu.updateActiveName();
-      });
-    },
-    isChild(index) {
-      let path = "";
-      const data = this.data[index].child;
-      // if (data.length && this.data[index].path !== "chart") {
-      if (data.length) {
-        if (data[0].child.length) {
-          path = data[0].child[0].href;
-        } else {
-          path = data[0].href;
+            data: JSON.parse(JSON.stringify(menu.child)),
+            activeName: ''
         }
-      } else {
-        path = "";
-      }
-      if (!path) return "/" + this.data[index].path;
-      return "/" + this.data[index].path + "/" + path;
     },
-    // menuChange(key) {
-    //   // if (key == 5) return;
-    //   const path = this.isChild(key - 1);
-    //   this.$router.push(path);
-    //   // this.$bus.$emit("menu-change", key);
-    // },
-    logOff() {
-      this.$router.push("/login");
+    watch: {
+        $route(to, from) {
+            if (to.name === from.name) {
+                return
+            }
+            this.init()
+            this.$bus.$emit('on-top-menu-change', true)
+        }
     },
-    operation(data) {
-      if (data === "logOff") {
-        this.$router.push("/login");
-      }
+    mounted() {
+        this.setMenuData(this.data)
+        this.init()
     },
-    handleOpenAdmin(name) {
-      this.$router.push(name);
+    methods: {
+        ...mapActions(['setMenuData']),
+        init() {
+            const { path, params } = this.$router.currentRoute
+            let activeName = ''
+            // 去除首页
+            if (!this.$route.meta.index) {
+                const { firstId } = getNavInfo({
+                    data: this.data,
+                    path,
+                    id: params.id
+                })
+                activeName = firstId
+            }
+            this.activeName = activeName
+            this.$nextTick(() => {
+                this.$refs.topmenu.updateActiveName()
+            })
+        },
+        isChild(index) {
+            return getTopByPath(this.data[index])
+        },
+        logOff() {
+            this.$router.push('/login')
+        },
+        operation(data) {
+            if (data === 'logOff') {
+                this.$router.push('/login')
+            }
+        },
+        handleOpenAdmin(name) {
+            this.$router.push(name)
+        }
     }
-  }
-};
+}
 </script>

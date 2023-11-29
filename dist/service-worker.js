@@ -11,19 +11,19 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
-
 importScripts(
-  "dist/precache-manifest.0fb423e6cf538f8caca8e6e51e90d1fd.js"
-);
+    'https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js'
+)
 
-workbox.core.setCacheNameDetails({prefix: "ryDesignIo"});
+importScripts('dist/precache-manifest.a5f959faf88727e0178bac3f79ce0926.js')
+
+workbox.core.setCacheNameDetails({ prefix: 'ryDesignIo' })
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
  * requests for URLs in the manifest.
  * See https://goo.gl/S9QRab
  */
-self.__precacheManifest = [].concat(self.__precacheManifest || []);
-workbox.precaching.suppressWarnings();
-workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+self.__precacheManifest = [].concat(self.__precacheManifest || [])
+workbox.precaching.suppressWarnings()
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {})

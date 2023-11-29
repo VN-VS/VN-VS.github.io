@@ -1,0 +1,276 @@
+<template>
+  <div>
+    <div class="demo-title">横版</div>
+    <div class="demo-text-center">
+      <div>
+        <rd-image-group
+          style="margin: 16px 24px 10px 0"
+          :size="1"
+          :data="hengImage"
+          :width="216"
+          :height="120"></rd-image-group>
+        单图
+      </div>
+      <div>
+        <rd-image-group
+          style="margin: 16px 24px 10px 0"
+          :size="2"
+          :data="hengImage"
+          :width="216"
+          :height="120"></rd-image-group>
+        双图
+      </div>
+      <div>
+        <rd-image-group
+          style="margin: 16px 24px 10px 0"
+          :size="3"
+          :data="hengImage"
+          :width="216"
+          :height="120"></rd-image-group>
+        三图
+      </div>
+      <div>
+        <rd-image-group
+          style="margin: 16px 24px 10px 0"
+          :size="4"
+          :data="hengImage"
+          :width="216"
+          :height="120"></rd-image-group>
+        四图
+      </div>
+      <div>
+        <rd-image-group
+          style="margin: 16px 24px 10px 0"
+          :size="6"
+          :data="hengImage"
+          :width="216"
+          :height="120"></rd-image-group>
+        六图
+      </div>
+    </div>
+    <div class="demo-title">竖版</div>
+    <div class="demo-text-center">
+      <div>
+        <rd-image-group
+          style="margin: 16px 24px 10px 0"
+          :size="1"
+          :data="shuImage"
+          :width="216"
+          :height="120"></rd-image-group>
+        单图
+      </div>
+      <div>
+        <rd-image-group
+          style="margin: 16px 24px 10px 0"
+          :size="2"
+          :data="shuImage"
+          :width="216"
+          :height="120"></rd-image-group>
+        双图
+      </div>
+      <div>
+        <rd-image-group
+          style="margin: 16px 24px 10px 0"
+          :size="3"
+          position-type="vertical"
+          :data="shuImage"
+          :width="216"
+          :height="120"></rd-image-group>
+        三图
+      </div>
+      <div>
+        <rd-image-group
+          style="margin: 16px 24px 10px 0"
+          :size="4"
+          :data="shuImage"
+          :width="216"
+          :height="120"></rd-image-group>
+        四图
+      </div>
+      <div>
+        <rd-image-group
+          style="margin: 16px 24px 10px 0"
+          :size="6"
+          :data="shuImage"
+          :width="216"
+          :height="120"></rd-image-group>
+        六图
+      </div>
+    </div>
+    <div class="demo-title">方形</div>
+    <div class="demo-text-center">
+      <div>
+        <rd-image-group
+          style="margin: 16px 24px 10px 0"
+          :size="1"
+          :data="largeSquareImage"
+          :width="216"
+          :height="120"></rd-image-group>
+        单图
+      </div>
+      <div>
+        <rd-image-group
+          style="margin: 16px 24px 10px 0"
+          :size="2"
+          :data="largeSquareImage"
+          :width="216"
+          :height="120"></rd-image-group>
+        双图
+      </div>
+      <div>
+        <rd-image-group
+          style="margin: 16px 24px 10px 0"
+          :size="3"
+          :data="largeSquareImage"
+          :width="216"
+          :height="120"></rd-image-group>
+        三图
+      </div>
+      <div>
+        <rd-image-group
+          style="margin: 16px 24px 10px 0"
+          :size="4"
+          :data="largeSquareImage"
+          :width="216"
+          :height="120"></rd-image-group>
+        四图
+      </div>
+      <div>
+        <rd-image-group
+          style="margin: 16px 24px 10px 0"
+          :size="6"
+          :data="largeSquareImage"
+          :width="216"
+          :height="120"></rd-image-group>
+        六图
+      </div>
+    </div>
+    <div class="demo-title">视频</div>
+    <div class="demo-text-center">
+      <div>
+        <rd-image-group
+          style="margin: 16px 24px 10px 0"
+          :size="1"
+          :data="hengVideoCover"
+          :width="216"
+          type="video"
+          preview-tip
+          preview
+          :height="120"></rd-image-group>
+          预览 preview
+      </div>
+      <div>
+        <rd-image-group
+          style="margin: 16px 24px 10px 0"
+          :size="2"
+          :data="hengVideoCover"
+          :width="216"
+          type="video"
+          preview-tip
+          preview
+          open-cover
+          :height="120"></rd-image-group>
+          视屏+封面 open-cover
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      hengImage: [
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/e3b/a68/69c/e3ba6869c4593eaaa7984e0f555d9517-small.jpg'
+        }
+      ],
+      shuImage: [
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/730/108/76d/73010876da5dfc7870f10a5fc00fd9f6-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/730/108/76d/73010876da5dfc7870f10a5fc00fd9f6-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/730/108/76d/73010876da5dfc7870f10a5fc00fd9f6-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/730/108/76d/73010876da5dfc7870f10a5fc00fd9f6-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/730/108/76d/73010876da5dfc7870f10a5fc00fd9f6-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/730/108/76d/73010876da5dfc7870f10a5fc00fd9f6-small.jpg'
+        }
+      ],
+      // 方形大图
+      largeSquareImage: [
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/fd6/f7a/f5d/fd6f7af5dd140f355d40aa8f87ebb3f1-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/fd6/f7a/f5d/fd6f7af5dd140f355d40aa8f87ebb3f1-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/fd6/f7a/f5d/fd6f7af5dd140f355d40aa8f87ebb3f1-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/fd6/f7a/f5d/fd6f7af5dd140f355d40aa8f87ebb3f1-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/fd6/f7a/f5d/fd6f7af5dd140f355d40aa8f87ebb3f1-small.jpg'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/fd6/f7a/f5d/fd6f7af5dd140f355d40aa8f87ebb3f1-small.jpg'
+        }
+      ],
+      hengVideoCover: [
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/9a5/121/52a/9a512152a0991180d3783c7bc14c8129-small.jpg',
+          previewSrc:
+            'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/9a5/121/52a/9a512152a0991180d3783c7bc14c8129.mp4'
+        },
+        {
+          src: 'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/9a5/121/52a/9a512152a0991180d3783c7bc14c8129-small.jpg',
+          previewSrc:
+            'https://adsdesk-test.s3.cn-north-1.amazonaws.com.cn/9a5/121/52a/9a512152a0991180d3783c7bc14c8129-small.jpg'
+        }
+      ]
+    }
+  }
+}
+</script>
+<style>
+.demo-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+.demo-text-center {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  text-align: center;
+}
+</style>
